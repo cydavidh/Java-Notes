@@ -6,5 +6,8 @@ public class IfElseSugar {
         int time1 = 20;
         String result = (time1 < 18) ? "Good day!" : "Good evening!";
         System.out.println(result);// Outputs "Good evening!"
+        for (int i = 0; i < cars.size(); i++) {
+        }
+
     }
 }

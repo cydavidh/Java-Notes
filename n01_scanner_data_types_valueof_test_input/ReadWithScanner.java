@@ -1,4 +1,4 @@
-package n01_reading_input_Integer.valueOf;
+package n01_scanner_data_types_valueof_test_input;
 
 import java.util.Scanner;
 
@@ -11,6 +11,15 @@ public class ReadWithScanner {
         double floatingPoint = Double.valueOf(scanner.nextLine());
         boolean trueOrFalse = Boolean.valueOf(scanner.nextLine());
 
-        scanner.close();
+        String input = "one\n" + "two\n" +
+                "three\n" + "four\n" +
+                "five\n" + "one\n" +
+                "six\n";
+
+        Scanner reader = new Scanner(input);
+        String line = reader.nextLine();
+        System.out.println(line);
+        String line2 = reader.nextLine();
+        System.out.println(line2);
     }
 }
