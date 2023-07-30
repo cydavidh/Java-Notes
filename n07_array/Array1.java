@@ -29,7 +29,8 @@ public class Person implements Comparable<Person> {
         return Double.compare(this.weight, o2.weight);
     }
     // Use wrapperclass 
-    Arrays.sort(listOfPeople);/Collections.sort(...);
+    Arrays.sort(listOfPeople);
+    Collections.sort(listOfPeople); //will work too
 }
 
 // ALTERNATIVE SORTING (Created in sepparate class)

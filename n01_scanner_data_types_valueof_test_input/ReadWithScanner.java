@@ -21,5 +21,8 @@ public class ReadWithScanner {
         System.out.println(line);
         String line2 = reader.nextLine();
         System.out.println(line2);
+
+        String input = "one\n" + "two\n" + "three\n" + "four\n" + "five\n" + "one\n" + "six\n";
+        Scanner reader = new Scanner(input);
     }
 }

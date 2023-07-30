@@ -2,8 +2,6 @@ package n15_program_logic.seperate_userinterface;
 
 import java.util.Scanner;
 
-import java.util.Scanner;
-
 public class UserInterface {
 
     private GradeRegister register;

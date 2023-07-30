@@ -9,7 +9,7 @@ String input = "one\n" + "two\n" +"three\n" "four\n" +"five\n" + "one\n" +"six\n
 
 Scanner reader = new Scanner(input);
 
-# Unit testing
+# Unit testing: a type of software testing where individual units or components of a software are tested
 
 jUnit
 public class CalculatorTest {
