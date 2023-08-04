@@ -1,19 +1,6 @@
+Single Responsibility Principle
+
 # Original Program
-
-<!--
-Points: 55
-Points: 51
-Points: 49
-Points: 48
-Points:
-
-5: ***
-4: **
-3: *
-2:
-1: ***
-0: **
--->
 
 Program{
 new scanner
@@ -37,6 +24,21 @@ new ArrayList<Integer> grades
         print stars
 
 }
+
+<!--
+Points: 55
+Points: 51
+Points: 49
+Points: 48
+Points:
+
+5: ***
+4: **
+3: *
+2:
+1: ***
+0: **
+-->
 
 # seperate grades
 

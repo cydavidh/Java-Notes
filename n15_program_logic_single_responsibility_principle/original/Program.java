@@ -1,5 +1,6 @@
-package n15_program_logic.seperate_grade_register;
+package n15_program_logic_single_responsibility_principle.original;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Program {
@@ -7,7 +8,7 @@ public class Program {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        GradeRegister register = new GradeRegister();
+        ArrayList<Integer> grades = new ArrayList<>();
 
         while (true) {
             System.out.print("Points: ");
@@ -23,13 +24,34 @@ public class Program {
                 continue;
             }
 
-            register.addGradeBasedOnPoints(score);
+            int grade = 0;
+            if (score < 50) {
+                grade = 0;
+            } else if (score < 60) {
+                grade = 1;
+            } else if (score < 70) {
+                grade = 2;
+            } else if (score < 80) {
+                grade = 3;
+            } else if (score < 90) {
+                grade = 4;
+            } else {
+                grade = 5;
+            }
+
+            grades.add(grade);
         }
 
         System.out.println("");
         int grade = 5;
         while (grade >= 0) {
-            int stars = register.numberOfGrades(grade);
+            int stars = 0;
+            for (int received : grades) {
+                if (received == grade) {
+                    stars++;
+                }
+            }
+
             System.out.print(grade + ": ");
             while (stars > 0) {
                 System.out.print("*");

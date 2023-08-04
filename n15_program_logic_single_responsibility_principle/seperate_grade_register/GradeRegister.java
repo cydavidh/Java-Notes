@@ -1,4 +1,4 @@
-package n15_program_logic.seperate_grade_register;
+package n15_program_logic_single_responsibility_principle.seperate_grade_register;
 
 import java.util.ArrayList;
 

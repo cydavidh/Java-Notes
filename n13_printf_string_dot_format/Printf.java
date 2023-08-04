@@ -1,9 +1,21 @@
 package n13_printf_string_dot_format;
 
-
 //https://alvinalexander.com/programming/printf-format-cheat-sheet/
 public class Printf {
     public static void main(String[] args) {
+
+
+        System.out.printf("Hello, %s. You owe me $%.2f.%n", "Jack", 25.0);
+        // Hello, Jack. You owe me $25.00.      
+        //%.2f means floating point number with 2 decimal places
+        //%n means newline
+        //%d means integer number
+        //%s means string
+        //%f means floating point number
+        //%t means date/time
+        //%b means boolean
+        //%c means character
+        //%i means integer
 
         //%<flags><width><.precision>specifier
 

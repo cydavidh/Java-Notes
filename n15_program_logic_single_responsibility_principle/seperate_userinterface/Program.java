@@ -1,4 +1,4 @@
-package n15_program_logic.seperate_userinterface;
+package n15_program_logic_single_responsibility_principle.seperate_userinterface;
 
 import java.util.Scanner;
 
