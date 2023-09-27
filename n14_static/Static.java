@@ -1,6 +1,7 @@
 // https://blog.hubspot.com/website/static-method-java
 
-// The static method and variable basically belong to the class, instead of a specific object created out of the class.
+// The static method and variable basically belong to the class, 
+// instead of a specific object created out of the class.
 
 package n14_static;
 

@@ -23,7 +23,7 @@ public class ArrayList1 {
         cars.size(); // 4
         cars.get(0); // Volvo
         cars.set(0, "Toyota"); // Volvo -> Toyota
-        cars.remove(0); // output: "Volvo" .remove() returns the removed object
+        cars.remove(0); // returns "Volvo"
         cars.clear(); // Clear full list
         cars.contains("BMW"); // true //boolean found = cars.contains("BMW");
 

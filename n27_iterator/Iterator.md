@@ -4,6 +4,7 @@ to iterate over it we use for-each loop (enhanced for loop) e.g. for (String som
 or we use iterator
 https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/Set.html
 
+```java
 public static void main(String[] args) {
     HashMap<String, String> postalCodes = new HashMap<>();
     postalCodes.put("00710", "Helsinki");
@@ -16,3 +17,4 @@ public static void main(String[] args) {
     }
 
 }
+```

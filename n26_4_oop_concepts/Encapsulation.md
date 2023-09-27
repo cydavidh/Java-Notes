@@ -48,7 +48,9 @@ To achieve encapsulation in Java −
 
 The variables of the EncapTest class can be accessed using the following program −
 
+
 /_ File name : RunEncap.java _/
+```java
 public class RunEncap {
 
       public static void main(String args[]) {
@@ -59,3 +61,4 @@ public class RunEncap {
             System.out.print("Name : " + encap.getName() + " Age : " + encap.getAge());
       }
 }
+```
