@@ -28,6 +28,7 @@ public class ArrayList1 {
         cars.contains("BMW"); // true //boolean found = cars.contains("BMW");
 
         Collections.sort(cars); // Sort cars
+        Collections.max(cars); // Max value
 
         cars.toString(); // way to print arraylist
 

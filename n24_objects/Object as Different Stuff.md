@@ -1,11 +1,15 @@
-package n11_objects_and_references;
+package n24_objects_is_a_reference_variable.n11_objects_and_references;
 
 //Assigning a reference type variable copies the reference
-Person joan=new Person("Joan Ball");System.out.println(joan);
+```java
+Person joan=new Person("Joan Ball");
+System.out.println(joan);
 
 Person ball=joan;
+```
 
 // Object as a method parameter
+```java
 public class AmusementParkRide {
     private String name;
     private int lowestHeight;
@@ -23,8 +27,10 @@ public class AmusementParkRide {
         return true;
     }
 }
+```
 
-// Object as object variable
+```java
+// Object as object variable (instance variable)
 public class Person {
     private String name;
     private SimpleDate birthday;
@@ -34,7 +40,9 @@ public class Person {
         this.birthday = date;
     }
 }
+```
 
+```java
 // Object of same type as method parameter
 public class SimpleDate {
     private int day;
@@ -86,8 +94,8 @@ public class Person {
 
     // Comparing the equality of objects (equals)
     SimpleDate first = new SimpleDate(1, 1, 2000);
-    SimpleDate second = new SimpleDate(1, 1, 2000);first.equals(second) // false, from the point of view of the default
-                                                                        // equals method.
+    SimpleDate second = new SimpleDate(1, 1, 2000);
+    first.equals(second) // false, from the point of view of the default equals method.
     // so we need to implement our own equals method
 
     public class SimpleDate {
@@ -152,53 +160,60 @@ ArrayList<Bird> birds = new ArrayList<>()
             return this.name.equals(comparedBird.name);
         }
     }
+```
 
-    // Object as a method's return value
-    public class Counter {
-        private int value;
 
-        // example of using multiple constructors:
-        // you can call another constructor from a constructor by calling this
-        // notice that the this call must be on the first line of the constructor
-        public Counter() {
-            this(0);
-        }
+// Object as a method's return value
+```java
+public class Counter {
+    private int value;
 
-        public Counter(int initialValue) {
-            this.value = initialValue;
-        }
-
-        public Counter clone() {
-            // create a new counter object that receives the value of the cloned counter as
-            // its initial value
-            Counter clone = new Counter(this.value);
-
-            // return the clone to the caller
-            return clone;
-        }
+    // example of using multiple constructors:
+    // you can call another constructor from a constructor by calling this
+    // notice that the this call must be on the first line of the constructor
+    public Counter() {
+        this(0);
     }
 
-    public class Factory {
-        private String make;
-
-        public Factory(String make) {
-            this.make = make;
-        }
-
-        public Car procuceCar() {
-            return new Car(this.make);
-        }
+    public Counter(int initialValue) {
+        this.value = initialValue;
     }
 
-    // objects-within-objects
-    public class Playlist {
-        private ArrayList<String> songs;
+    public Counter clone() {
+        // create a new counter object that receives the value of the cloned counter as
+        // its initial value
+        Counter clone = new Counter(this.value);
 
-        public Playlist() {
-            this.songs = new ArrayList<>();
-        }
+        // return the clone to the caller
+        return clone;
+    }
+}
+
+public class Factory {
+    private String make;
+
+    public Factory(String make) {
+        this.make = make;
     }
 
+    public Car procuceCar() {
+        return new Car(this.make);
+    }
+}
+```
+
+// objects-within-objects
+```java
+public class Playlist {
+    private ArrayList<String> songs;
+
+    public Playlist() {
+        this.songs = new ArrayList<>();
+    }
+}
+```
+
+```java
 public class AmusementParkRide {
     private String name;
     private int minimumHeigth;
@@ -273,3 +288,4 @@ public class AmusementParkRide {
     }
 }
 // Printing an Object from a List
+```

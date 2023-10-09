@@ -4,8 +4,13 @@ Superclass
 public class Person {
     private String name;
     private String address;
+    private String phone;
 
     public Person(String name, String address) {}
+
+    public void addPhone(int phone) {
+        this.phone = phone;
+    }
 
     @Override
     public String toString() {}
@@ -19,8 +24,9 @@ Ada Lovelace, 24 Maddox St. London W1S 2QN
 public class Student extends Person {
     private int credits;
 
-    public Student(String name, String address) {
+    public Student(String name, String address, int phone) {
         super(name, address);
+        super.addPhone(phone); // remember super.method(), too!
         this.credits = 0;
     }
 

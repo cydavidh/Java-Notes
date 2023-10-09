@@ -23,7 +23,8 @@ public class Circle implements Comparable<Circle> {
         this.x = x; this.y = y; this.r = r;
     }
 
-    @Override public boolean equals(Object o) {
+    @Override
+    public boolean equals(Object o) {
         if (o == this) return true;     // Identical references?
 
         if (!(o instanceof Circle)) return false;   // Correct type and non-null?
@@ -32,7 +33,7 @@ public class Circle implements Comparable<Circle> {
                                         // "public boolean  equals(Circle o)" won't work for 
                                         // "Object circle1 = new Circle(1,2,3)"
         
-        if (this.x == that.x && this.y == that.y && this.r == that.r) // If x,y,r are object reference variables like                                                               Strings, use .equals() instead.
+        if (this.x == that.x && this.y == that.y && this.r == that.r) // If x,y,r are object reference variables like Strings, use .equals() instead.
             return true;
         else
             return false;
