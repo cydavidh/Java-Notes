@@ -29,8 +29,8 @@ public class AmusementParkRide {
 }
 ```
 
-```java
 // Object as object variable (instance variable)
+```java
 public class Person {
     private String name;
     private SimpleDate birthday;
@@ -42,8 +42,8 @@ public class Person {
 }
 ```
 
-```java
 // Object of same type as method parameter
+```java
 public class SimpleDate {
     private int day;
     private int month;
