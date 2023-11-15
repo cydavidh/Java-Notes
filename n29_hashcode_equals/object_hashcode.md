@@ -63,3 +63,11 @@ public class Circle implements Comparable<Circle> {
     // repeated multiplication and addition steps "spread out" the range of hash code and dramatically reduce likelihood two unequal Circle objects have the same hash code.
 }
 ```
+
+https://softwareengineering.stackexchange.com/questions/399265/do-we-always-need-to-override-equals-hashcode-when-creating-a-new-class
+
+You must override hashcode if you've overridden equals.
+
+That's it. There are no other good reasons to modify these.
+
+As a side note, the use of equals to implement algorithms is highly overused. I would only do this if your object has a true logical identity. In most cases, whether two objects represent the same thing is highly context dependent and it's easier and better to use a property of the object explicitly and leave equals alone. There are many pitfalls to overriding equals, especially if you are using inheritance.

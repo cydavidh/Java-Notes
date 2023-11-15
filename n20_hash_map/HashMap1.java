@@ -1,6 +1,7 @@
 package n20_hash_map;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class HashMap1 {
     public static void main(String[] args) {
@@ -18,5 +19,13 @@ public class HashMap1 {
         postalCodes.values(); // [Helsinki, Oulu]
         postalCodes.remove("00710"); // returns "Helsinki"
         postalCodes.getOrDefault(postalCodes, "Some String"); // "Not found"
+
+        Map<String, String> maps = new HashMap<>();
+        maps.put("ganbatte", "good luck");
+        maps.put("hai", "yes");
+
+        for (String key : maps.keySet()) {
+            System.out.println(key + ": " + maps.get(key));
+        } // OUTPUT: ganbatte: good luck // hai: yes
     }
 }

@@ -36,9 +36,9 @@ public class Printf {
         System.out.printf("'%5.2f'%n", 2.28);
         // ' 2.28'
 
+        String variable = "example";
 
-
-        String string = String.format("A string %s", aVariable);
+        String string = String.format("A string %s", variable);
         String str = "First %s, then %s".formatted("foo", "bar");     
     }
 }

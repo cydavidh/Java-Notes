@@ -1,4 +1,4 @@
-package n38_upcast_downcast;
+package n38_upcast_downcast_polymorphism;
 
 public class UpcastDowncast {
     public static void main(String[] args) {

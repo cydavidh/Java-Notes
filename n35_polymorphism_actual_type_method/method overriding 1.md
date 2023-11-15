@@ -14,7 +14,7 @@ ollie.credits();        // DOESN'T WORK!
 ollie.study();              // DOESN'T WORK!
 ```
 
-But, the actual type (Student) decides which version of the method executes. (Student.toString)
+But, the actual type (Student) assigned to the variable decides which version of the method executes. (Student.toString)
 
 ```java
 Student ollie = new Student("Ollie", "6381 Hollywood Blvd. Los Angeles 90028");

@@ -3,7 +3,7 @@
 // The static method and variable basically belong to the class, 
 // instead of a specific object created out of the class.
 
-package n14_static;
+package n14_static_keyword;
 
 public class CrewMember {
     public CrewMember() {

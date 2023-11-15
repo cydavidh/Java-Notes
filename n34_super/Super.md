@@ -1,4 +1,4 @@
-Superclass
+# Superclass
 
 ```java
 public class Person {
@@ -6,19 +6,19 @@ public class Person {
     private String address;
     private String phone;
 
-    public Person(String name, String address) {}
+    public Person(String name, String address) {
+        this.name = name;
+        this.address = address;
+    }
 
     public void addPhone(int phone) {
         this.phone = phone;
     }
 
-    @Override
-    public String toString() {}
 }
 ```
 
-Output: 
-Ada Lovelace, 24 Maddox St. London W1S 2QN
+# Subclass
 
 ```java
 public class Student extends Person {
@@ -27,22 +27,9 @@ public class Student extends Person {
     public Student(String name, String address, int phone) {
         super(name, address);
         super.addPhone(phone); // remember super.method(), too!
-        this.credits = 0;
     }
 
-    public int credits() {return this.credits;}
-
-//If a method or variable has the access modifier private, it is visible only to the internal methods of that class. Subclasses will not see it, and a subclass has no direct means to access it. 
-
-    @Override
-    public String toString() {
-        //super.name: The field Person.name is not visible
-        return super.toString() + this.credits;
-    }
 }
 ```
-Output:
-Ollie, 6381 Hollywood Blvd. Los Angeles 90028, Study credits 0
-
 
 A subclass sees everything that is defined with the "public" modifier in the superclass. If we want to define some variables or methods that are visible to the subclasses but invisible to everything else, we can use the access modifier "protected" to achieve this.
