@@ -40,6 +40,8 @@ public class Printf {
 
         String string = String.format("A string %s", variable);
         String str = "First %s, then %s".formatted("foo", "bar");     
+
+        String.format("%d people are %s", 3, "chasing"); // 3 people are chasing
     }
 }
 

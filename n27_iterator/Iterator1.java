@@ -1,4 +1,4 @@
-package n30_iterator;
+package n27_iterator;
 
 import java.util.ArrayList;
 import java.util.Iterator;

@@ -1,20 +1,21 @@
 package n48_sandbox;
 
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class Sandbox {
     public static void main(String[] args) {
-        List<String> rows = new ArrayList<>();
+        String string = "trolololololo";
 
-        try {
-            Files.lines(Paths.get("file.txt")).forEach(row -> rows.add(row));
-        } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
+        if (string.matches("trolo(lo)*")) {
+            System.out.println("Correct form.");
+        } else {
+            System.out.println("Incorrect form.");
         }
-
     }
 }

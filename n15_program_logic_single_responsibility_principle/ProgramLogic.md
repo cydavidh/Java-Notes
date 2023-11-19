@@ -1,19 +1,19 @@
 Single Responsibility Principle
 
 # Original Program
-
+```java
 Program{
-new scanner
-new ArrayList<Integer> grades
+    new scanner
+    new ArrayList<Integer> grades
 
     score = input
 
-    score 50 then grade 0
-    score 60 then grade 1
-    70 -> 2
-    80 -> 3
-    90 -> 4
-    100 -> 5
+    score 50 then grade F
+    score 60 then grade E
+    70 -> D
+    80 -> C
+    90 -> B
+    100 -> A
 
     grades arraylist add grade
 
@@ -24,7 +24,7 @@ new ArrayList<Integer> grades
         print stars
 
 }
-
+```
 <!--
 Points: 55
 Points: 51
@@ -32,26 +32,42 @@ Points: 49
 Points: 48
 Points:
 
-5: ***
-4: **
-3: *
-2:
-1: ***
-0: **
+A: ***
+B: **
+C: *
+D:
+E: ***
+F: **
 -->
 
 # seperate grades
 
+```java
+
+Program {
+    new scanner
+    new GradeRegister register
+
+    read input points using while true
+
+    register.pointsToGradeToGradesArrayList(points)
+
+    for loop 5 to 0
+        stars = register.numberOfEachGrades(5 to 0)
+        print stars
+
+}
+
 GradeRegister {
-private ArrayList grades
-constructor
+    private ArrayList grades
+    constructor
 
     int numberOfEachGrades(int inputGrade 0-5) {
-        loop grades ArrayList to find total number of occurence for inputGrade 0-5.
+        loop grades ArrayList to find total number of occurence for inputGrade 0-5 //F to A.
     }
 
     int pointsToGrade(points) {
-        score 50 -> grade 0
+        score 50 -> grade F
         return grade;
     }
 
@@ -64,25 +80,23 @@ constructor
 
 }
 
-Program {
-new scanner
-new GradeRegister register
-
-    read input points using while true
-
-    register.pointsToGradeToGradesArrayList(points)
-
-    for loop 5 to 0
-        stars = register.numberOfEachGrades(5 to 0)
-        print stars
-
-}
-
+```
 # seperate user interface
 
+```java
+Program {
+    new Scanner
+    new GradeRegister register
+    new UserInterface(register, scanner)
+
+    main{
+        userInterface start();
+    }
+}
+
 UserInterface {
-private GradeRegister register
-private Scanner scanner
+    private GradeRegister register
+    private Scanner scanner
 
     constructor(GradeRegister register, Scanner scanner)
 
@@ -109,14 +123,8 @@ private Scanner scanner
 }
 
 GradeRegister {
-same from above
+    same from above
 }
 
-Program {
-new Scanner
-new GradeRegister register
-new UserInterface(register, scanner)
 
-    userInterface start();
-
-}
+```
