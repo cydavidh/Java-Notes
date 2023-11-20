@@ -3,14 +3,16 @@ package n06_array_list;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
 public class ArrayList1 {
 
     public static void main(String[] args) {
-        ArrayList<Integer> list = new ArrayList<>();
+        List<String> oldList = Arrays.asList("Apple", "Banana", "Cherry");
+        ArrayList<String> newList = new ArrayList<String>(oldList);
+        ArrayList<Integer> list = new ArrayList<Integer>();
         ArrayList<Double> list1 = new ArrayList<>();
         ArrayList<Boolean> list2 = new ArrayList<>();
-        ArrayList<String> list3 = new ArrayList<>();
 
         ArrayList<String> cars = new ArrayList<String>();
         cars.add("Volvo");
