@@ -35,6 +35,7 @@ members.stream()
 
 Stream.sorted() sorts stream only
 Collections.sort() sorts original
+Again, both only work for objects that has implemented Comparable<> and compareTo()
 
 ```java 
 Collections.sort(member);
