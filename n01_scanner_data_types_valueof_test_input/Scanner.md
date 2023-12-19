@@ -20,6 +20,16 @@ String input = "one\n" + "two\n" + "three\n";
 Scanner reader = new Scanner(input);
 System.out.println(reader.nextLine()); // one
 System.out.println(reader.nextLine()); // two
+```
 
+==============================================================================================
 
+Try with Resources Scanner
+
+```java
+try (Scanner scanner = new Scanner(System.in)) {
+    int input = Integer.valueOf(scanner.nextLine());
+} catch (NumberFormatException e) {
+    System.out.println("Invalid input. Please enter a number.");
+}
 ```

@@ -2,6 +2,11 @@
 Object = Instance 
 Type = Class (int, String), Interface (Runnable, Comparable, Serializable), enum
 
+# Object hello = new String("asdf")
+you are declaring a variable named hello of type Object and initializing it with a new instance of the String class.
+
+The String instance is created with the value "asdf". Because String is a subclass of Object in Java, you can assign an instance of String to a variable of type Object. This is an example of polymorphism, a fundamental concept in object-oriented programming.
+
 # Upcasting = Subtype Polymorphism
 Upcasting is an example of implicit or widening reference conversion, which is a form of polymorphism known as subtyping polymorphism or inclusion polymorphism.
 

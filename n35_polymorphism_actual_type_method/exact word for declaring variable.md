@@ -1,10 +1,16 @@
+# Object hello = new String("asdf")
+you are declaring a variable named hello of type Object and initializing it with a new instance of the String class.
+
+The String instance is created with the value "asdf". Because String is a subclass of Object in Java, you can assign an instance of String to a variable of type Object. This is an example of polymorphism, a fundamental concept in object-oriented programming.
+
+# another example
 List<String> names = new ArrayList<>();
 
+1. Declaring a variable named names of type List<String>.
+2. Initializing names with a new instance of ArrayList<String>. 
+
+
 We create a new ArrayList object and assigns it to the names variable, which is declared as a List<String>. 
-
-
-
-
 
 
 In the line List<String> names = new ArrayList<>();, we are creating a new ArrayList object that can hold String objects and assigning it to a variable named names.

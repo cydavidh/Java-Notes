@@ -12,6 +12,28 @@ System.out.println(myArray.length); // Prints "5"
 ```
 
 Java arrays are objects that store multiple variables of the same type. However, they do not belong to any class and they don't have any methods of their own. 
+========================================================================================================
+# Add value to array by keeping an int freeIndex
+
+```java
+public class List<Type> {
+
+    private Type[] values;
+    private int firstFreeIndex;
+
+    public List() {
+        this.values = (Type[]) new Object[10];
+        this.firstFreeIndex = 0;
+    }
+
+    public void add(Type value) {
+        this.values[this.firstFreeIndex] = value;
+        this.firstFreeIndex++; // same as this.firstFreeIndex = this.firstFreeIndex + 1;
+    }
+}
+
+```
+========================================================================================================
 
 But, Java provides the `Arrays` class in the `java.util` package that provides static methods to manipulate arrays. Here are some of the commonly used methods:
 
@@ -56,3 +78,15 @@ int index = Arrays.binarySearch(arr, 3);
 ```
 
 Remember, these methods are static, so they should be called on the class `Arrays`, not on an instance of the class.
+
+
+==========================================================================================================
+
+```java
+int[] arr = {1, 2, 3, 4, 5};
+int length = arr.length;
+```
+
+In Java, length is a property of an array, not a method. This is because when an array is created, its size is fixed and cannot be changed. Therefore, length is a final instance variable available to arrays, and it represents the size of the array.
+
+On the other hand, in classes like String, ArrayList, etc., length() or size() are methods because the length can change, and it needs to be computed each time you call the method.

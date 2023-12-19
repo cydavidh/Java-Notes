@@ -5,6 +5,7 @@ public class StringMethods {
 
         String name1 = "cheatsheet";
         String name2 = "exam";
+        String name 3 = new String();
         name1.length(); // unlike array.length no parenthesis or arraylist.size()
         "1,000,000".replace(",", "");
         name2.concat(name1);
@@ -17,7 +18,12 @@ public class StringMethods {
         name1.isEmpty(); // returns false
         name1.startsWith("che"); // returns true
         name1.contains("tshe"); // returns true
-        test.toString();
+
+        // two ways to convert to String
+        test.toString(); // returns "cheatsheet"
+        String.valueOf(0); // returns "0"
+
+
         name1.replace(int1, int2, "String");
         // Change chars from pos1 to pos2 by string
 

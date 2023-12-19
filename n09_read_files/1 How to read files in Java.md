@@ -73,6 +73,16 @@ public class Main {
         }
     }
 }
+
+public List<String> readLines(String fileName) throws IOException {
+    return Files.lines(Paths.get(fileName)).collect(Collectors.toList());
+}
+
+public List<String> readLines(String fileName) throws Exception {
+    ArrayList<String> lines =  new ArrayList<>();
+    Files.lines(Paths.get(fileName)).forEach(line -> lines.add(line));
+    return lines;
+}
 ```
 
 In this example, `Files.lines(Path)` method read all lines from a file as a Stream. Each line is then printed to the console.
@@ -98,9 +108,47 @@ three
 
 In the case of `Files.lines(Paths.get("file.txt")).forEach(System.out::println);`, `Files.lines(Paths.get("file.txt"))` returns a `Stream<String>` where each element is a line from the file. `forEach(System.out::println)` then prints each line.
 
-
-
-
-
-
 # The `forEach()` method is indeed a part of the Streams API in Java, but it's not exclusive to it. The `forEach()` method is also a part of the `Iterable` interface, which is implemented by the `Collection` interface. This means that any class that implements `Iterable` (which includes all collection classes like `List`, `Set`, `Queue`, etc.) will have the `forEach()` method.
+
+
+4. **Java in a Nutshell: 346 Read from file**
+
+```java
+try (var in = new BufferedReader(new FileReader(filename))) {
+    String line;
+    while ((line = in.readLine()) != null) {
+        System.out.println(line);
+    }
+} catch (IOException e) {
+    // Handle FileNotFoundException, etc. here
+}
+```
+
+5. **Read from console**
+
+If we need to read in lines from the console, rather than a file, we will usually use
+an InputStreamReader applied to System.in. Let’s look at an example where we
+want to read in lines of input from the console but treat input lines that start with
+a special character as special—commands (“metas”) to be processed, rather than
+regular text. This is a common feature of many chat programs, including IRC. We’ll
+use regular expressions from Chapter 9 to help us:
+
+```java
+var SHELL_META_START = Pattern.compile("^#(\\w+)\\s*(\\w+)?");
+try (var console = new BufferedReader(new InputStreamReader(System.in))) {
+    String line;
+    while ((line = console.readLine()) != null) {
+        // Check for special commands ("metas")
+        Matcher m = SHELL_META_START.matcher(line);
+        if (m.find()) {
+            String metaName = m.group(1);
+            String arg = m.group(2);
+            doMeta(metaName, arg);
+        } else {
+            System.out.println(line);
+        }
+    }
+} catch (IOException e) {
+    // Handle FileNotFoundException, etc. here
+}
+```

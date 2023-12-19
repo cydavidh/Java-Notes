@@ -10,6 +10,7 @@ public class HashMap1 {
 
         postalCodes.put("00710", "Helsinki");
         postalCodes.put("90014", "Oulu");
+        postalCodes.putIfAbsent("00710", "Helsinki"); // does not add anything because key already exists
         postalCodes.get("00710"); // returns "Helsinki"
         postalCodes.get("12345"); // returns null
         postalCodes.containsKey("00710"); // returns true // O(1) time complexity // runs get() method internally and
