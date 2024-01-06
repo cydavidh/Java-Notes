@@ -31,12 +31,14 @@ a?bc or (a?bc) // match 'abc' or 'bc', but not 'aabc' or 'abbc'.
 [a+bc] // match 'a', 'b', 'c', or '+'.
 [a*bc] // match 'a', 'b', 'c', or '*'.
 [a?bc] // match 'a', 'b', 'c', or '?'.
-[^abc] // match any character except 'a', 'b', or 'c'.
+[^abc] // NOT a or b or c. match any character except 'a', 'b', or 'c'.
 
 # only use hyphen inside brackets
 [a-z] // match any lowercase letter
 [A-Z] // match any uppercase letter
 [0-9] // match any digit
+[2-36-9] // match 2, 3, 6, 7, 8, 9
+[a-zA-Z] // match all letters
 
 . // This symbol matches any single character except newline characters. For example, a.b would match 'acb', 'aeb', 'a1b', etc.
 ^ // This symbol matches the start of a line. For example, ^a would match any line that starts with 'a'.
@@ -48,3 +50,14 @@ $ // This symbol matches the end of a line. For example, a$ would match any line
 \s // This matches any whitespace character (spaces, tabs, line breaks).
 \S // This matches any non-whitespace character.
 ```
+
+===================================================================================================
+```java
+tempString.matches("01[0-9]{7}") //boolean
+//A student number begin with "01" followed by 7 digits between 0–9.
+```
+
+```java
+tempString.replaceAll("[^a-zA-Z ]", "") //replace all NOT abcABC and space, with empty.
+```
+
