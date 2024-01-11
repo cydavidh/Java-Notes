@@ -14,7 +14,7 @@ Yes, the enum constants DIAMOND, SPADE, CLUB, and HEART are implicitly *public*,
 *static* - they belong to the Suit enum itself (rather than an instance of the enum), 
 *final* - their values cannot be changed once they are created.
 
-# Example of an enum in Java that contains object reference variables:
+# Example of an enum in Java that contains instance variables:
 
 ```java
 public enum Animal {
@@ -41,7 +41,7 @@ public enum Animal {
 }
 ```
 
-In this example, each constant in the `Animal` enum has a `name` and a `sound` field, which are object reference variables. The fields are initialized using a constructor, and there are getter methods `getName()` and `getSound()` to retrieve the name and sound of the animal.
+In this example, each constant in the `Animal` enum has a `name` and a `sound` field, which are instance variables. The fields are initialized using a constructor, and there are getter methods `getName()` and `getSound()` to retrieve the name and sound of the animal.
 
 You can use this enum in your code like this:
 
