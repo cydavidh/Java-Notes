@@ -31,17 +31,16 @@ members.add(new Member("ada", 33));
 members.stream()
         .sorted()
         .forEach(m -> System.out.println(m)); //18, 33, 89
-```
 
+Collections.sort(members)
+members.stream().forEach(m -> System.out.println(m));
+```
+^
 Stream.sorted() sorts stream only
 Collections.sort() sorts original
 Again, both only work for objects that has implemented Comparable<> and compareTo()
 
-```java 
-Collections.sort(member);
-members.stream().forEach(m -> System.out.println(m));
-```
-
+========================================================================================================================================================
 Object can implement Comparable in lambda
 
 ```java

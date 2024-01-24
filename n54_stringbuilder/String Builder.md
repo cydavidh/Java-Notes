@@ -5,6 +5,12 @@ for (int i = 1; i < 5; i++) {
 }
 System.out.println(numbers.toString()); //"1234"
 ```
+
+```java
+StringBuilder sb = new StringBuilder("Hello");
+sb.append(" World");
+System.out.println(sb);
+```
 StringBuilder is used for efficient string concatenation in Java.
 
 In Java, String objects are immutable, which means once a String object is created, it cannot be changed. When you concatenate strings using the + operator, a new String object is created each time, which can be inefficient in terms of memory and performance, especially in loops.

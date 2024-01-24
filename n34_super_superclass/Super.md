@@ -2,9 +2,9 @@
 
 ```java
 public class Person {
-    private String name;
-    private String address;
-    private String phone;
+    protected String name;
+    protected String address;
+    protected String phone;
 
     public Person(String name, String address) {
         this.name = name;
@@ -14,7 +14,6 @@ public class Person {
     public void addPhone(int phone) {
         this.phone = phone;
     }
-
 }
 ```
 
@@ -27,6 +26,8 @@ public class Student extends Person {
     public Student(String name, String address, int phone) {
         super(name, address);
         super.addPhone(phone); // remember super.method(), too!
+        super.name = name;
+        this.address = address; // super is optional if different field names
     }
 
 }

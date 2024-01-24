@@ -112,16 +112,28 @@ In the case of `Files.lines(Paths.get("file.txt")).forEach(System.out::println);
 
 
 4. **Java in a Nutshell: 346 Read from file**
+BEST WAY TO READ A FILE     
 
 ```java
-try (var in = new BufferedReader(new FileReader(filename))) {
-    String line;
-    while ((line = in.readLine()) != null) {
-        System.out.println(line);
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class ReadFileExample {
+    public static void main(String[] args) {
+        String filePath = "path/to/your/textfile.txt";
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
-} catch (IOException e) {
-    // Handle FileNotFoundException, etc. here
 }
+
 ```
 
 5. **Read from console**

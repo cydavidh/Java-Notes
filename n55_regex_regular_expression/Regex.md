@@ -61,3 +61,7 @@ tempString.matches("01[0-9]{7}") //boolean
 tempString.replaceAll("[^a-zA-Z ]", "") //replace all NOT abcABC and space, with empty.
 ```
 
+```java
+tempString.matches("\\d+") // matches one or more consecutive digits like 123, but not 123abc
+```
+In the regular expression \\d+, \\d represents a digit (0-9), and the + signifies that the preceding element (in this case, a digit) must appear one or more times. So, \\d+ matches one or more consecutive digits. 

@@ -6,14 +6,21 @@ String string = scanner.nextLine();
 int integer = Integer.valueOf(scanner.nextLine());
 double floatingPoint = Double.valueOf(scanner.nextLine());
 boolean trueOrFalse = Boolean.valueOf(scanner.nextLine());
-
-int integer = scanner.nextInt(); //cannot be empty
-//.nextInt() call is just not going to return until an actual number of some sort is entered (or, if something else is submitted by the user, the InputMismatchException occurs instead.
-String string = scanner.nextLine();
-// if string .isEmpty() {break;}
 int integer = Integer.valueOf(string);
+int integer = scanner.nextInt(); //cannot be empty //.nextInt() call is just not going to return until an actual number of some sort is entered (or, if something else is submitted by the user, the InputMismatchException occurs instead.
 ```
+==============================================================================================
+# scanner.next()
+```java
+System.out.print("Enter full name: ");        
+Scanner scan = new Scanner(System.in);  //a b c
+String a = scan.next();  
+String b = scan.next();  
+String c = scan.next();  
+System.out.println(a + b + c); //abc  
 
+```
+==============================================================================================
 # Scanner(input)
 ```java
 String input = "one\n" + "two\n" + "three\n";
