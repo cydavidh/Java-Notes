@@ -37,3 +37,61 @@ public class PasswordGenerator {
     }
 }
 ```
+=====================================================================================================================
+
+Standard Java Objects
+```java
+String address = "Green Street, 102";
+Customer customer = new Customer("Clara Foster", address);
+```
+
+Spring Beans
+```java
+@Configuration
+public class AppConfig {
+
+    @Bean
+    public String address() {
+        return "Green Street, 102";
+    }
+
+    @Bean
+    public Customer customer(String address) {
+        return new Customer("Clara Foster", address);
+    }
+}
+```
+
+=====================================================================================================================
+
+Domain Object
+```java
+class Company {
+    private final String name;
+    private final List<String> employees;
+
+    Company(String name, List<String> employees) {
+        this.name = name;
+        this.employees = employees;
+    }
+}
+```
+
+```java
+@Configuration
+class CompanyConfiguration {
+    @Bean
+    public List<String> employees() {
+        return List.of(
+            "Lillia Barber",
+            "Todd Mcloughlin",
+            "Jasmine Wu"
+        );
+    }
+
+    @Bean
+    public Company company(@Autowired List<String> employees) {
+        return new Company("WorkProject", employees);
+    }
+}
+```

@@ -29,7 +29,7 @@ public class DemoController {
 
         return ResponseEntity.ok()
                 .contentType(MediaType.parseMediaType(mediaType)) //ResponseEntity.BodyBuilder contentType() method
-                .body(image);
+                .body(image); //put the BufferedImage in the reponse body.
     }
 
     private static BufferedImage createImage(Color color) {
