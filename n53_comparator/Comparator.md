@@ -25,13 +25,13 @@ Collections.sort(hand, (a, b) -> {
 });
 ```
 
-3. **Method Reference:** You can also use a method reference to create a `Comparator`:
+3. **Comparator.comparing():** If the `Card` class has a method that returns a `Comparable` (like `getSuit()`), you can use the `Comparator.comparing()` method:
 
 ```java
 Comparator<Card> comparator = Comparator.comparing(c -> c.getSuit().ordinal());
 ```
 
-4. **Comparator.comparing():** If the `Card` class has a method that returns a `Comparable` (like `getSuit()`), you can use the `Comparator.comparing()` method:
+4. **Method Reference:** You can also use a method reference to create a `Comparator`:
 
 ```java
 Comparator<Card> comparator = Comparator.comparing(Card::getSuit);

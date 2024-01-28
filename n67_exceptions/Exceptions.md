@@ -1,8 +1,8 @@
-2. **Checked vs Unchecked Exceptions**: Checked exceptions are exceptions that are checked at compile time. If a method might throw a checked exception, it must declare it using a `throws` clause, or handle it with a try-catch block. Unchecked exceptions, also known as runtime exceptions, do not need to be declared or handled explicitly, although it can be good practice to do so.
+2. **Checked vs Unchecked Exceptions**: `Checked` exceptions are exceptions that are checked at compile time. If a method might throw a checked exception, it must declare it using a `throws` clause, or handle it with a try-catch block. `Unchecked` exceptions, also known as runtime exceptions, do not need to be declared or handled explicitly, although it can be good practice to do so.
 
 3. **Common Checked Exceptions**: A common example of a checked exception is `IOException`, which is often thrown when performing I/O operations.
 
-4. **Common Unchecked Exceptions**: Examples of unchecked exceptions include `NullPointerException`, `IndexOutOfBoundsException`, `ArithmeticException`, `IllegalArgumentException`, `ClassCastException`, and `NumberFormatException`.
+4. **Common Unchecked Exceptions**: Examples of unchecked exceptions include `NullPointerException`, `IndexOutOfBoundsException`, `ArithmeticException`, `IllegalArgumentException`, `ClassCastException`, and `NumberFormatException`. Unchecked exceptions do not need to be declared or handled explicitly
 
 5. **Handling Exceptions**: Exceptions can be handled using try-catch blocks. This allows you to write code that is executed when an exception occurs, such as logging an error message.
 

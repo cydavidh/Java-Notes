@@ -1,3 +1,5 @@
+final is keyword to declare constant variable.
+
 final for Reference variables means that it is not possible to reassign a reference to the variable.
 
 final String string = new String();

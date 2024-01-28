@@ -4,7 +4,7 @@ The `ArrayList` constructor can take a `Collection` as a parameter.
 This will create a new `ArrayList` that is initialized with the elements of the provided `Collection`.
 
 ```java
-List<String> oldList = Arrays.asList("Apple", "Banana", "Cherry");
+List<String> oldList = List.of("Apple", "Banana", "Cherry"); //don't use Array.asList if you need immutability and are using Java 9 or later, List.of is often the better choice. If you need to modify the contents of the list or are working with older versions of Java, Arrays.asList is more suitable.
 ArrayList<String> newList = new ArrayList<>(oldList);
 ```
 

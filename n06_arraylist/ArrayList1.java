@@ -1,4 +1,4 @@
-package n06_array_list;
+package n06_arraylist;
 
 import java.util.ArrayList;
 import java.util.Arrays;
