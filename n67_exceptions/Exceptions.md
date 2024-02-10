@@ -55,3 +55,17 @@ In both examples, the exception is thrown in the method body and then caught and
 7. **Exception Propagation**: If a method does not handle an exception, it is propagated up the call stack to the method that called it. This continues until the exception is caught and handled, or until it reaches the `main` method and causes the program to terminate.
 
 8. **Exception in Main Method**: If an exception is thrown in the `main` method and it's not caught, the JVM will terminate the program and print the exception's stack trace to the standard error output. This applies to both checked exceptions declared with a `throws` clause and unchecked exceptions.
+
+
+
+=====================================================================================================================================================
+
+if (currentId == mainThreadId) {
+                throw new RuntimeException("You must start a new thread!");
+            }
+
+            try {
+                Thread.sleep(2000);
+            } catch (Exception e) {
+                throw new RuntimeException("Do not interrupt the processor", e);
+            }
