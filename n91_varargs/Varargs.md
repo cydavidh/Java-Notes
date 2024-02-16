@@ -15,8 +15,8 @@ public class VarargsExample {
         printNumbers(1, 2, 3, 4, 5);  // Call with multiple arguments
         printNumbers(10);             // Call with one argument
         printNumbers(new int[19]); //you can invoke the method by passing several integer numbers or an array of ints.
-        printNumberOfArguments(new int[] { }); // no arguments here
-        printNumberOfArguments(new int[] { 1, 2 });
+        printNumbers(new int[] { }); // no arguments here
+        printNumbers(new int[] { 1, 2 });
     }
 }
 ```

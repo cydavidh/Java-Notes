@@ -8,6 +8,7 @@ public class VarargsExample {
             System.out.println(number);
         }
     }
+
     public static void main(String[] args) {
         printNumbers(1, 2, 3, 4, 5); // Call with multiple arguments
         printNumbers(10); // Call with one argument
