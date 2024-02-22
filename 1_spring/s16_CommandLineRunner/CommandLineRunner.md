@@ -1,3 +1,9 @@
+CommandLineRunner is like main method.
+except it runs after spring context is fully initialized, unlike if you run stuff in the main method in the main class.
+
+
+
+
 ```java
 @Component
 public class Runner implements CommandLineRunner {
@@ -8,6 +14,8 @@ public class Runner implements CommandLineRunner {
     }
 }
 ```
+
+
 
 Yes, using CommandLineRunner in a Spring application serves as a means to execute code after the Spring context has been fully initialized but before the application starts running. It's useful for running logic right at the start, like initializing data, running a quick piece of code for debugging, or triggering batch jobs.
 

@@ -1,0 +1,57 @@
+body {
+    padding: 0;
+    /* Remove padding to allow buttons to span the full width of the border */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    /* Ensure there's no default margin */
+}
+
+h1 {
+
+    color: #333;
+    text-align: center;
+    margin: 30px;
+    /* Adjust if you want no space above the h1 */
+}
+
+button {
+    background-color: #4ca7af;
+    color: white;
+    padding: 25px 0;
+    /* Adjust padding to ensure text fits, but maintain button height */
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    /* Adjust font size to ensure text fits on one line */
+    width: 100%;
+    /* Make button span the full width */
+    height: auto;
+    /* Adjust height automatically based on content and padding */
+    display: block;
+    /* Stack buttons vertically */
+    border-radius: 0;
+    /* Remove rounded corners */
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* If you want to remove any space between the buttons, ensure there's no margin set on them */
+button:first-child {
+    margin-bottom: 0;
+    /* Remove space between buttons if needed */
+}
+
+.content {
+    width: 300px;
+    /* Adjust width as needed */
+    height: 200px;
+    /* Adjust height as needed */
+    background-color: white;
+    /* Ensures the background within this div is white */
+    margin: auto;
+    /* Centers the div horizontally */
+    box-sizing: border-box;
+    /* Includes padding in the element's total width and height */
+}

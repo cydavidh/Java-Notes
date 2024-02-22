@@ -78,3 +78,17 @@ name.append("reya"); //Can call methods on a final variable that change its stat
 name = new StringBuilder(); // Won’t compile. You can’t reassign zanother object to a final variable.
 }
 }
+
+you can invoke an inherited method.
+class Zoo {
+    protected String coolMethod() { return "wow" }
+}
+class Moo extends Zoo {
+    void useMyMethod() {
+        sout(this.coolMethod()) //invoke inherited method
+    }
+}
+
+In other words, a final reference still allows you to modify the state of the object it refers to, but you can’t modify the reference variable to make it refer to a different object. 
+
+Burn this in: there are no final objects, only final references.

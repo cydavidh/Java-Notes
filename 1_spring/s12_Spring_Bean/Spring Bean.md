@@ -6,7 +6,7 @@ First is method annotated with @Bean (inside classes annotated with @Configurati
 Second is classes annotated with @Component, @Service, @Repository...etc.
 
 
-First
+@Bean
 ```java
 @Configuration
 public class Addresses {
@@ -18,7 +18,7 @@ public class Addresses {
 }
 ```
 
-Second
+@Component
 ```java
 @Component
 public class PasswordGenerator {
@@ -64,7 +64,7 @@ public class AppConfig {
 
 =====================================================================================================================
 
-Domain Object
+A Domain Object
 ```java
 class Company {
     private final String name;
@@ -76,6 +76,10 @@ class Company {
     }
 }
 ```
+
+@Bean
+A list bean (list of employees)
+A Company bean (a company made up of employees)
 
 ```java
 @Configuration
@@ -92,6 +96,33 @@ class CompanyConfiguration {
     @Bean
     public Company company(@Autowired List<String> employees) {
         return new Company("WorkProject", employees);
+    }
+}
+```
+
+
+=====================================================================================================================
+name of bean can be different, what matters is the return type.
+@Bean
+```java
+@Configuration
+public class CopyingConfiguration {
+
+    @Bean
+    public CopyingMachine getCopyingMachine(){
+        return new CopyingMachine();
+    }
+}
+```
+Using the bean, but with another name.
+```java
+@Component
+public class Device {
+    private CopyingMachine copyingMachine;
+
+    @Autowired
+    public Device(CopyingMachine copyingMachine) {
+        this.copyingMachine = copyingMachine;
     }
 }
 ```
