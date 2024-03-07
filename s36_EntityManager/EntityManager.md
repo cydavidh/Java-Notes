@@ -38,7 +38,7 @@ em.getTransaction().commit();
 em.close();
 ```
 
-#### Read
+#### Read/Find/Get
 
 ```java
 EntityManager em = emFactory.createEntityManager();

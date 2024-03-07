@@ -1,4 +1,4 @@
-package cydavidh.sandbox.s02debugtesting;
+
 
 import java.util.logging.Logger;
 
@@ -8,7 +8,7 @@ public class Assert {
     public static void main(String[] args) {
         try {
             String str = null;
-            assert (str!=null) : "Hey bro string cannot be null";
+            assert (str != null) : "Hey bro string cannot be null";
             System.out.println(str.length());
         } catch (NullPointerException e) {
             logger.warning("A NullPointerException was caught: " + e.getMessage());

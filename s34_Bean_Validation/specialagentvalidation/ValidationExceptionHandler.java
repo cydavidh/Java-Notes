@@ -19,8 +19,8 @@ public class ValidationExceptionHandler {
         ex.getBindingResult().getFieldErrors().forEach((error) -> {
             String fieldName = error.getField();
             String errorMessage = error.getDefaultMessage();
-//            errors.put(fieldName, errorMessage);
-            errors.put("defaultMessage", errorMessage);
+            errors.put(fieldName, errorMessage);
+            // errors.put("defaultMessage", errorMessage);
         });
         return ResponseEntity.badRequest().body(errors);
     }

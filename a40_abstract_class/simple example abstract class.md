@@ -1,24 +1,22 @@
 ```java
-public abstract class GraphicObject {
+public abstract class Animal {
   private String name; // declare fields
 
-  public GraphicObject(String name) { // declare nonabstract methods
+  public Animal(String name) { // declare nonabstract methods
     this.name = name;
   }
 
-  abstract void draw(); //abstract methods do not specify a body.
+  abstract void makeSound(); //abstract methods do not specify a body.
 }
 
-class ImplementingObject extends GraphicObject {
-  public ImplementingObject(String name) {
+class Cat extends Animal {
+  public Cat(String name) {
     super(name);
   }
 
-  public void draw() {
+  public void makeSound() {
     // doSomething();
-    System.out.println("hi");
+    System.out.println("Meow");
   }
 }
 ```
-
-
