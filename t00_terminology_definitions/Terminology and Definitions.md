@@ -24,10 +24,10 @@ new instantiates the class Dog and initialize it (initialize means assign values
 primitive type: just assign value for first time.
 object/instance: assigning value for the instance variables
 
-# instantiation
+# instantiation, construct, create = object is built on the heap, object's constructor runs
 primitive type: cannot be instantiated.
 object/instance: use new to create new object/instance of the class
-
+- any code that uses `new` will cause the class constructor and all superclass constructors to run
 
 
 
