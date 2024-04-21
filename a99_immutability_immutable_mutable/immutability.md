@@ -18,4 +18,4 @@ class Box<?> {
 
 Box is immutable, and once created you can't change the contents of it.
 
-But the variable myFavBox is not immutable, so you can reassign it so that it points to the intance of another box like Box<Puppy>.
+The variable `myFavBox` is not final; thus, while you cannot alter the contents of the existing `Box<Kitten>`, you can reassign `myFavBox` to refer to a different `Box` instance, such as `Box<Puppy>`.

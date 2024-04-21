@@ -22,12 +22,16 @@ public class ArrayList1 {
         System.out.println(cars);
 
         // Arraylist methods
+        cars.add("Opel");
+        cars.add(3, "Opel"); // Add Opel to index 3
         cars.size(); // 4
         cars.get(0); // Volvo
         cars.set(0, "Toyota"); // Volvo -> Toyota
         cars.remove(0); // returns "Volvo"
-        cars.clear(); // Clear full list
-        cars.contains("BMW"); // true //boolean found = cars.contains("BMW");
+        cars.remove("Volvo"); // removes first occurence of Volvo, returns true
+        cars.clear();
+        cars.contains("BMW"); // true
+        cars.idexOf("BMW"); // 1
 
         Collections.sort(cars); // Sort cars
         Collections.max(cars); // Max value

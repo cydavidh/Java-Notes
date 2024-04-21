@@ -46,13 +46,7 @@ public class Circle implements Comparable<Circle> {
     // If your override had worked, you'd now have a Rational reference to a String object - madness! 
     // That would break the type-safety rules in Java. By forcing your args to be an exact match, the language can ensure that only "acceptable" arguments appear in the method.
 
-    @Override public int hashCode() { //hash code algorithm from Effective Java by Joshua Bloch
-        int result = 17;
-        result = 37*result + x; 
-        result = 37*result + y;
-        result = 37*result + r;
-        return result;
-    }
+ 
 
     // two objects must have same hash code if they are equals according to the equals() method.
     // important but not required for unequal object to have unequal hash codes
