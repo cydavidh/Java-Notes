@@ -148,6 +148,8 @@ SELECT 1-1 IS NULL;
 ================================================================
 # CASE
 # CASE WHEN THEN
+# WHEN...THEN
+# ELSE
 **simple CASE**
 syntax
 ```sql
@@ -579,6 +581,8 @@ ORDER BY
     CASE WHEN rating > 3 THEN 1 ELSE 0 END DESC; -- this will put the hotel with higher rating than 3 before the others with lower rating.
 ```
 =================================================================
+# JOIN
+# JOIN ON
 Employees
 EmployeeName | DepartmentID
 David        | 1
@@ -1018,5 +1022,31 @@ SELECT DATE_SUB('1996-11-30', INTERVAL 2 YEAR); -- Subtracts 2 years
 ```sql
 SELECT CONVERT_TZ('2008-05-15 12:00:00','UTC','US/Eastern'); -- Converts time zone
 SET time_zone = 'US/Eastern'; -- Set session time zone
+```
+=================================================================
+# SELECT INTO
+copies data from one table into a new table.
+
+
+copy all columns to new table
+```sql
+SELECT *
+INTO newtable [IN externaldb]
+FROM oldtable
+WHERE condition;
+```
+
+copy some column to new table
+```sql
+SELECT column1, column2, column3, ...
+INTO newtable [IN externaldb]
+FROM oldtable
+WHERE condition;
+```
+
+create a backup copy of Customers
+```sql
+SELECT * INTO CustomersBackup2017 IN 'Backup.mdb'
+FROM Customers;
 ```
 =================================================================
