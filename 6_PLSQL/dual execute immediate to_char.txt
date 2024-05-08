@@ -1,0 +1,16 @@
+-- Created on 2024/4/25 by 520723 
+declare 
+  -- Local variables here
+  i integer;
+  v_sql varchar(2000);
+  v_output varchar(100);
+begin
+  v_sql := 'select to_char(sysdate,''yyyy/mm/dd'') from dual';
+  execute IMMEDIATE  v_sql into v_output;
+  dbms_output.put_line(v_output);
+end;
+
+
+
+=========================================
+select sysdate from dual

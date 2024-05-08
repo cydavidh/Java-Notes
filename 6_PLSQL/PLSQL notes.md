@@ -12,7 +12,8 @@ exception handling statements
 END
 ```
 ==================================
-SET SERVEROUTPUT ON;
+
+
 
 v_ local
 g_ global
@@ -426,3 +427,45 @@ FOR i IN 1..10 LOOP
 END LOOP;
 ```
 =====================================
+# EXCEPTION
+
+```sql
+DECLARE
+  declaration statements;
+BEGIN
+  execution statements;
+EXCEPTION
+  WHEN exception 1 THEN ...;
+  WHEN exception 2 THEN ...;
+  [WHEN OTHERS THEN ...]
+END;
+```
+
+```sql
+DECLARE
+  dividend int := 100;
+  divisor int := 0;
+  quotient int;
+BEGIN
+  quotient := dividend / divisor;
+EXCEPTION
+  WHEN ZERO_DIVIDE THEN
+    dbms_output.put_line('zero division exception');
+END;
+```
+=====================================
+# Where 1=1
+small trick to avoid parenthesis
+```sql
+where 1=1 
+and A.RELEASED_DATE between date '2022-01-01' and date '2022-12-31' 
+and A.PDM_MODELS like '%21B%'
+```
+same as
+```sql
+where (A.RELEASED_DATE between date '2022-01-01' and date '2022-12-31' 
+and A.PDM_MODELS like '%21B%')
+```
+
+=====================================
+# 

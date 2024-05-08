@@ -1050,3 +1050,4 @@ SELECT * INTO CustomersBackup2017 IN 'Backup.mdb'
 FROM Customers;
 ```
 =================================================================
+to_date('2005-01-01 13:14:20','yyyy-MM-dd HH24:mm:ss')
