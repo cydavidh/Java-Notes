@@ -1,0 +1,11 @@
+Oracle PL/SQL ¾Ç²ß¸ê·½¤À¨É¦p¤U¡G
+
+½u¤W®ÑÄy¡G
+1.	Database PL/SQL Language Reference(12cr2) Oracle©x¤è¾Ç²ß¸ê·½¡Ghttps://docs.oracle.com/en/database/oracle/oracle-database/12.2/lnpls/ 
+2.	Tutorialspoint PL/SQL ±Ð¾Ç: https://www.tutorialspoint.com/plsql/index.htm 
+
+©µ¦ù¾\Åª¸ê·½¡G
+1.	SQL »yªk±Ð¾Ç(¸û²Ê²Lªº¤¶²Ð)¡Ghttps://www.1keydata.com/tw/sql/sql.html 
+2.	Oracle Live SQL (§äSQL½d¨Ò)¡Ghttps://livesql.oracle.com/ 
+ƒÜ	 ½d¨Ò(Date and formatting examples)¡Ghttps://livesql.oracle.com/apex/livesql/file/content_BFKOA5UQHDV1MV7HRUDDUEPM4.html 
+3.	SQL QnA (Blog) (¶i¶¥¡A«Ü¦h¦³½ìªº¨Ò¤l¸ò¥Îªk)¡Ghttp://sqlqna.blogspot.com/ 

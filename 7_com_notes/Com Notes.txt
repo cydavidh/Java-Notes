@@ -1,0 +1,1010 @@
+# 1234 plm，bom，yntc設變流程
+ 西門子 ugs previously PDM
+now PTC Windchill
+
+裕隆汽車 代工待料 付錢整車代工費
+裕隆日產 
+
+爭取到日產代理車型的時候會跟日產要求specification
+規格
+拿到車子bom然後區分國產化 進口零件 bom
+善其事 采購部 移動判定的標準
+設計 到量產 monosecurity team
+
+plm only ebom
+g2b 生產bom
+rt系統 接著plm 拆分 不在我們家
+
+式樣/規格
+nx西門子 承認圖審核
+space vertex/vision 3D視圖 viewer就可以看 審圖
+
+兩張ecr 對 ecn
+建立bom發給下游
+nxpdm傳送cad到yntc
+
+ecr確認那些需要匯入
+ecr ecn設備通訊單
+交給開發商開發零件
+不透過nd了 變成ess
+user owner export table 發行
+今天的資料隔天轉rt抓資料
+然後裕隆會便mbom生產
+
+設變通知單
+製作零件材料多少庫存 什麽時候切換新舊材料
+
+kd零件
+不是緊急的話ebom直接發行
+緊急的需要表單
+零技跟設計科合并
+協力廠依照ebom開發
+
+winchill api
+客制化
+零件的組成
+bd的組成
+
+研發階段叫做ebom
+式樣都會在同一個block 同一個部品
+很多個式樣
+
+mbom 就只有一個式樣
+
+application list means block difference
+part list block bd和parts之間的關係
+
+每天跑100個放在
+bom表匯出耗費資源
+
+bd = block diff
+part list =  relationship between between bd and part
+
+車型可能會有零件從不同的地方來源
+
+ecr then ecn
+ecn has block dif
+ebom
+
+a spec 式樣表
+spec
+al
+block dif
+pl
+
+沒有寫東西的是標準配
+
+part list
+v，國產，
+a，外國
+plm來源369説明
+研發階段建號10個
+之後階段12碼後面物流碼
+5-5-2
+
+369區分
+日產報表區分那些國產那些海外零件
+
+物流碼
+
+整個node一直在更新
+但是發行的時候才會圈圈整個發
+
+ebom (plm)
+mbom (sap)
+
+2種發行
+新車首版發行：
+纍計block difference
+ecn 不會發給下游
+mrp用車款去串式樣標配選配零件發給下游routing table
+一般發行：
+之後才會發給下游資料
+
+yntc把ecn附件套表轉到資料夾給生管部
+
+車軌列表清單下載
+
+研發代碼 跟 生產代碼不一樣
+02f vs p15
+
+02f 已發行新版 pl al report 2024311
+已發行的意思
+
+全新的是審核沒有審核都有
+
+function = block
+variant = dif
+source = 來源碼
+
+ecr審核
+ecn作業
+
+recotable
+no
+放在al pl list 然後ebom 匯入
+
+ecn發行了之後
+ebom表資料
+設通單給裕隆
+routing table
+
+ess 設變調查系統
+調查庫存
+什麽時候切換
+====================================================================
+
+5 pdmlink 11
+
+10.0 只能跟oracle9搭配
+通過中間版本8-11
+8-10-11
+理論授權70-71
+11.0.1
+無法超用
+heavy user lite user 需不需要簽單授權
+租賃
+專案管理project link
+workflow 生命周期綁在一起
+不同流程短賦予存取權限
+從地10才開始跟NX整合
+前臺ap
+後臺bg
+plm負責人method server看有沒有異常
+LDAP界面，科所群組概念Authentication
+File Vault存附件檔案
+郵件使用自己的
+透過workflow lifecycle來進行cad，零件，文件的manage
+ypops透過sql來取得data
+透過各種的data type來取得data
+透過api來存取data
+ECR件附日產設通單
+MRP依據excel套件
+物件串聯為產品組織
+space vision/vertex: Nx 視圖轉出來的
+csm，ebm，
+A.1修改時候會出庫比你高鎖定
+check in變化版序A2
+新版本修訂更換版本B1
+life cycle and workflow you can insert java functions during the process.
+plm11.ptcnet.net/Windchill/app/
+測試機需不需要license
+ha架構aa active active ap active standby
+物件產生這個人有沒有憑證
+檢核憑證
+數量
+理論授權，尊重不要用不被授權的東西
+匯入工作監視器
+不要更改admin密碼
+wildcard search careful
+除了NX之外space vision可不可以用 pvc業務代表確認一下
+NX cad 需要license 所以
+審圖過程所以不會用NX CAD
+pdm在vm上
+從現在vm取出來
+rehost
+去測試機把最新的的cps copy出來
+儀表總成零件，意思是裏面會有很多零件組成
+很少透過pdm修改bom
+都是al/pl上傳附件
+給下游rt是要個過程細，
+一定要求需求單，不要一通電話就幫他改。 指派 請假 離職
+============================================================================================
+6 plm 基本
+車系一般是三碼在台灣
+在日本development code看車行
+式樣SPEC class/item/detail
+用function designer來確定組長
+MRP車型 define
+wcadmin username pdm 最高管理者
+two tone：top black bottom red, out black inside orange
+trim define
+pt1, sop,sos, eop define
+SOP 上市
+試裝
+車型 車色
+專管科上specnote，進行spec 發行
+式樣spec
+一個一個改
+透過excel一次會進去比較快
+engine/body要一起發
+更新mrp設定更新eng/body
+發生過設計者沒有給引擎資料只有body
+被勾選的要轉給新承辦。
+============================================================================================
+7 plm tdm
+
+
+不會附CAD到plm
+西門子出的NX
+有客制化NX-STK
+經過那些過程cad從哪裏搬到哪裏
+如果不是admin，那就會有人做缺圖檢查
+============================================================================================
+8 plm ecm
+
+
+要問的問題
+ebom 維護 考慮是否關聯設通
+是不是重保件才需要經理審核？
+ECN套表產生機制用途
+缺圖更正
+
+
+ECR採行與不採行審核
+
+手動建立快速g2b日產設通單已經有
+自動執行緊急追加這是爲了批次來不及的時候
+
+流程ynm ecr process3_newe_ecr-1800071
+然後就可以看到流程圖
+
+recotable 最長可能2年
+看需不需要kd件
+
+recotable維護
+
+零件開發很長的周期
+
+重寶/YNcode 才會經理
+
+設變通知關聯
+
+YNCode = 1 意思是成本》10萬
+
+爲什麽要輸出之後然後再附件上去。
+
+ebom受影響項目和零件，
+
+excel 下載之後又再次處理之後就會造成問題。
+
+赤色手配，三個部門紙本簽核。
+
+每天都會發ecn
+============================================================================================
+家森報告notes
+
+日產導入新G2B之後就不行了
+原本設通單可以自動匯入
+現在plm對應
+G2B
+主要還是日產設通單
+物料清單就是bom
+每臺車會拆成一小塊一小塊的block
+000 到 英文字母
+不止500，到上千
+頭燈可能就是一個block
+block下面的零件的list就是Part List
+裕日和日產和外面不同之處是Application List
+頭燈跟生產的車子不同式樣之間的關係
+對應式樣不同的地方，對應那種車型
+pl部分會有block part sturct
+al會有block variant option code 沒有option code就是標準配備
+沒有選配碼一律就是標配d1-d1-d1-d1
+車款（組合）-車型-opt code-b1-b3-b4
+選配碼：ABAG*,ETCTP
+選擇電裝ABAG2、方向盤ABAG2*+ETCTP、内裝ETCTP
+要注意不要取到方向盤ABAG2或方向盤ETCTP
+沒辦法判斷，一定要設四個broker對應的
+b12d那時候最多到4，5個到32r之後二到三個上限
+2個選配碼對應的broker就是4個
+KD件 進口
+V件 local
+設通單撰寫要領
+p33a他的source一定要是一樣的
+專管科 零管科
+g2b一個來源 source 是kd件
+零管 source 是v件
+標準件最多，單一化，理論上沒雙件號
+21b p02f p33a
+其他歷史車型eop
+就只有這三個車型還在購案階段
+
+
+plm
+1， 所有bom的資料其實都是從g2b來的
+到了後面rtbom - mbom
+原本是要一筆一筆key下去，但是現在好一點
+但是還是要把excel檔案編輯好，丟到系統上面
+以前是一個一個cell的資料打上去
+要花好幾天
+現在只需要編輯excel
+
+沒有模組了，但還是要設定，供應商變成自己工廠。
+轉換界面給下游
+系統裏面會有模組
+匯入ebom之後進行圖檔管理但是其實圖面不在plm上
+發行了之後會給pis，設變管理，anpqp
+ebom會產生界面儅
+
+
+pdm.yulong-nissan.com.tw/windchill/
+wcadmin
+我們的plm其實是套裝軟體，但是我們進行了客制化
+跟原版軟體操作界面不太一樣
+編輯完成之後要記得入庫，不然。。。
+封裝、會議之類的功能沒有用到
+任務，出庫工作，更新内容
+跟R8不太一樣，R11可以排列ui
+加森rm002
+
+搜尋
+搜尋之後可以釘選在右邊
+bd search
+ecn, ecr, part search
+右上角的管理
+自己勾勾然後按‘展示‘按鈕
+這些會内建很多條件
+新賬號是沒有的
+儲存條件
+
+瀏覽
+前後管理，再看一下ppt
+
+請假的時候可以委派職務代理人
+所有的任務都會給那個人
+任務委派就只有單一的任務，但是委派職務就是全部了
+
+瀏覽-》客制化入口
+ebom 上傳之類的都在這裏
+
+ecn關聯
+ecr跟ecn會有關聯，而ecn跟其他的物件也會建立關聯
+需要一個電子流程來跑從建立到發行。
+
+
+設變流程
+如果確認執行過的話可以close
+手動建立設通單只是緊急情況先把日產設通單先下載然後拿在你前面輸入吧？
+在對應的管理庫選擇車型p33a,lab再建立ECR,不然可能出錯
+在瀏覽-》產品庫33a
+動作V 新建-》新建變更請求
+加進去一堆資料，不是建立新的bd，只是把關聯拉進來。受影響到的BD，物件。block
+會產生的新的物件的是在ecn，不是ecr，這裏只是把關聯拉進來。
+建立ecr之後系統就自動直接採行了
+如果ecr-》ecn可以廢棄掉
+不採行會有審核。
+要自己設定組長，因爲沒有default組長，其他系統會設定其他主管。
+以往會有日籍副理，但是現在沒有。
+有問題：發現不會科長審核后他自己帶下去下個主管
+如果有重保A/重要B，要勾給經理簽
+/一般件N不需要
+依照判斷
+審核部分
+
+recotable其實就是廠商調查kd切換什麽時候切換
+recotable只是填表單
+專管科會做綫外作業，然後回來填寫。
+調查完之後才會回來進行維護ebom
+如果進行到ebom之後是沒有辦法退回來ecotable的
+審核後進行發行階段
+看館藏裏面有沒有圖面。
+nx pdm裏發的只是cad
+有些館藏是不發給場上的
+plm用的是SV
+kd需要館藏，看情況
+cad發行單發行之後就會館藏了
+基本上國產才會館藏
+
+ecn發行流程目前沒有在plm系統裏
+進設變調查系統
+廠商調查-》
+設計者收到發行的設通單後那要轉給設通單的工廠單位
+ecr狀態一定要是實行
+ecn在建立的時候會去判定ecr是不是實行
+一旦點了ecn建立使用了結案的ecr那就
+ecr結案了又拿來建立，那就會卡死
+現在在plm系統做了防呆
+勾選廠商調查一定要寫正確的廠商代碼
+常常沒有人填寫代碼
+或者沒有勾廠商調查，但是有代碼
+國產件的廠商調查不在recotable
+國產的就發行ECN就可以了
+收到日產設通單-》ECR-》ECN
+建立ecn的時候就要決定是否需要recotable
+填寫recotable的時候要填plm系統的車系，不要填日產的
+11Q就填11Q，不要N11Q
+車系，試選單三碼寫成四碼，可能要開發
+
+ebom維護
+要先followinstructions 要不然可能會卡住
+
+ecn套表
+ecn套表下載之後作出修改之後上傳是脫鈎的
+套表是爲了手寫summary和設通單撰寫修改簡介
+
+
+ecn副理簽核完成之後就發行了
+
+==============================================================================================================
+
+Wtchangeactivity2  -->ECA    
+Wtchangeorder2     --->ECN
+Wtchangerequest2   --->ECR
+ChangeRecordIfc    --->记录ECA与产生对象之间的关系
+AffectedActivityData  ---->记录ECA与受影响对象之间的关系
+IncludedInIfc   --->记录ECN和ECA之间的关系
+RelevantRequestData --->ECR和受影响对象之间的关系
+WTPart   
+Wtpartmaster
+WTDocument
+Wtdocumentmaster 
+EPMDocument Epmdocumentmaster  Epmbuildrule Epmbuildhistory Epmdescribelink     --->ProE相关
+WfProcess Wfprocesstemplate   -- 流程实例 流程模板
+WorkItem -- 任务
+Wfassignedactivity Wfassignedactivitytemplate --活动对象 活动模板
+Wfexpressionrobot Wfexprrobottemplate  --   表达式对象  表达式模板
+Promotionnotice Promotiontarget  --升级请求对象表    升级请求对象和升级对象关系表
+Wtpartusagelink  --部件使用关系表
+WTPartReferenceLink:部件与参考文档之间的关系
+WTPartDescribeLink:部件与描述文档之间的关系
+WTDocumentUsageLink:文档结构关系
+WTDocumentDependencyLink:文档之间的参考关系
+WTUser  用户表
+WTGroup 群组
+Ballots
+select * from  MembershipLink  --上下文团队关系角色成员关系
+PDMLInkProduct  -- 产品
+Wtlibrary  --存储库
+Project2    --项目
+-- 软属性部件相关表
+StringDefinition  StringValue
+FloatDefinition  FloatValue
+RefenceDefintion
+
+select * from WTTypeDefinition   -- 类型表
+
+LocationChangeRecord  移动历史记录表
+IdentityChangeHistory 重命名历史记录表
+MadeFromLink  另存为对象之间的关系
+LifeCycleHistory 成熟度历史记录
+==========================================================================================
+Windchill PDMLink工作流相关对象数据模型
+适用于
+Windchill PDMLink 6.2至11.2
+说明
+工作流相关对象数据模型
+关联查询工作流相关数据
+生成类似路由/处理历史记录表格的查询生成器报告
+使用报告管理生成工作流任务投票和备注信息报告
+发现工作流实例相关对象
+解决方案
+工作流对象主要类型
+   
+Object
+Class	Table
+Workflow Process	wt.workflow.engine.WfProcess	WFPROCESS
+WFAssignedActivity	wt.workflow.work.WfAssignedActivity	WFASSIGNEDACTIVITY
+WFAssignment	wt.workflow.work.WfAssignment	WFASSIGNMENT
+Workitem/Workflow  Task	wt.workflow.work.Workitem	WORKITEM
+工作流对象连接关系
+最常用的工作流对象链接如下：
+ 
+Join	From Table	To Table
+Parent Process Ref	WFASSIGNEDACTIVITY	WFPROCESS
+Activity Assignment Link	WFASSIGNMENT	WFASSIGNEDACTIVITY
+Work Item Link	WORKITEM	WFASSIGNMENT
+
+ 
+除上述情况，已完成任务的用户/承担者/所有者的备注和投票记录在 WFVOTINGEVENTAUDIT
+Windchill PDMLink 9.0之后， WFVOTINGEVENTAUDIT 表和  WORKITEM  表链接关系如下：
+WFVOTINGEVENTAUDIT  .IDA3B6 =  WORKITEM  .IDA2A2（RoleB对象）
+另外，工作流的主业务对象和工作流对象关系如下
+businessObjReference ：链接   WfProcess  --to--   ControlBranch
+主参考 ：链接   ControlBranch   --to--  PBO  Maste   r（例如 WTDocumentMaster ， WTChangeOrder2Master 等）
+更多信息参考下图（Here, WTChangeOrder2 is used as an example of PBO）
+
+==========================================================================================
+
+Windchill PDMLink中了解变更管理对象及其关系
+
+适用于
+Windchill PDMLink 6.2至11.0
+注意变更关联在11.0中已做更改，查看 查询构建器的灵活更改链接
+说明
+如何理解更改管理的对象以及它们的关系
+更改对象与其他更改对象时如何联系起来的
+更改对象与其他对象时如何联系起来的
+更改管理的对象之间的关系，例如，更改公告和更改请求
+更改管理数据模型
+解决方案
+所有变化
+ 
+更改管理框架定义了一个对象可以怎样被正式地更改
+主要可以通过两个主要的对象类型来解释：
+更改对象 （ Change Object ）
+可更改对象 （ Changeable ）
+更改对象：
+模态数据类型（建模数据类型）将更改进程中相关的信息封装了起来
+它与其他更改对象通过连接类进行关联
+主要的更改对象类型（图片中黄色框）：
+问题报告 （ 问题报告 ） / PR ：类wt.change2.WTChangeIssue：表WTChangeIsssue
+更改请求 （ Change Request ） / ECR ：类wt.chang2.WTChangeReuqest2：表WTChangeRequest2
+更改 公告 （ Change Notice ） / ECN ：类wt.change2.WTChangeOrder2：表WTChangeOrder2
+更改活动 （ Change Activity ） /更改任务 （ Change Task ） /实施计划 （ Implementation Plan ） / CA ：类wt.change2.WTChangeActivity2：表WTChangeActivity2
+更改提案 （ Change Proposal ）：类wt.change2.WTChangeProposal：表WTChangeProposal
+更改分析 （ Change Analysis ）：类wt.change2.WTAnalysisActivity：表WTAnalysisActivity
+更改对象连接类型（图片中蓝色连接）
+
+最常使用的更改对象——PR，ECR，ECN，CA——使用以下的连接类进行连接
+FormalizedBy ：连接 更改事项 （ Change Issue ）/  PR   ---至--- 更改请求 （ Change Request ）/  ECR ：表FormalizedBy
+AddressedBy ：连接 更改请求 （ Change Request ）/  ECR-  至- 更改请求 （ Change Notice ）/  ECN ：表AddressedBy2
+IncludedIn2 ：连接 更改 公告 （ Change Notice ）/  ECN-  至- 更改活动 （ Change Activity ）/  CA ：表IncludedIn2
+除了上述内容外，有些操作可能也需要额外的更改对象及其连接关系
+ResearchedBy ：可以连接 更改更改 （ Change Proposal ）和 更改分析 （ Change Analysis ）-至- 更改请求 （ Change Request ）/  ECR ：表
+AcceptedStrategy ：连接 更改更改 （ Change Proposal ）-至- 更改公告 （ Change Order ）/  ECN ：表AcceptedStrategy
+可更改对象（Changeables）：
+可以与更改对象（Change Object）关联的可以更改的对象
+并非可存储的类型。这意味着没有数据库表
+实现了Java接口 Changeable2  的对象
+包含的场景类型
+EPM文件
+WTPart
+WTDocument
+WTProductInstance2
+更改对象（Change Objects）和可更改对象（Changeables）之间的连接：
+ 
+常规应用中，需要更改的项与更改活动（Change Activity）关联在一起
+AffectedActivityData ：连接更改活动（ Change Activity ）/  CA-  至-要更改的 可更改对象 （ Changeable ）：表AffectedAcitivityData
+ChangeRecord2 ：连接更改活动（ Change Activity ）/  CA-  至-产生的 可更改对象 （ Changeable ）：表ChangeRecord2
+除了更改活动（Change Activity）之外，可更改对象（Changeables）也可以使用下面的类型的关联被连接到其他更改对象，需要注意这些类型的关联为更改提供了某些信息。但是归根结底， 必须更改的对象 状语从句： 已经更改的对象 的英文通过连接到 更改活动 （ 变更活动 ）的项来标示
+ReportedAgainst ：连接 问题报告 （ Problem Report ）/  PR- 至- 可更改对象 （ Changeable ）：表ReportedAgainst
+问题 产品 ：连接 问题报告 （ 问题报告 ）/  PR- 至-仅 WTPartMaster  类型：表
+RelevantRequestData ：连接 更该请求 （ 变更申请 ）/  ECR  -至- 可更改对象 （ 可变 ）：表RelevantRequestData
+主题产品 ：连接 更该请求 （ 变更申请 ）/  ECR  -至-仅仅 WTPartMaster  类型：表主题产品
+RelevantAnalysisData ：连接 更改分析 （ Change Analysis ）-至-  可更改对象 （ Changeable ）：表RelevantAnalysisData
+
+=================================================================================
+SQL/PLSQL
+Spec Notes/CSM/EBM/
+Struts.
+ESS
+PTC University - Introduction to PTC Windchill PDMLink 11.0 for Heavy Users
+
+ess webpage
+wasadmin
+000000ab
+
+use minho's username to login to test webpage
+520679
+000000ab
+
+minho homework
+find a jsp
+search 
+what is jsp
+what jsp
+what action java
+how to find in xml
+which stored procedure
+how does procedure give back.
+
+menu.properties
+13.menu.02.id    = 13-02-01
+==========================================================================================================================
+```sql
+--查詢有登入記錄的ID是否有有效或失效PLM帳號
+SELECT r.name                            AS employno
+     , r.fullname                        AS name
+     , decode(r.disabled, '0', 'Y', 'D') AS inservice
+  FROM ( SELECT DISTINCT a.idb5
+         FROM auditrecord a
+        WHERE a.eventkey = '*/wt.session.SessionUserAuditEvent/login'
+       ) t
+ INNER JOIN wtuser r
+ON t.idb5 = r.ida2a2
+ WHERE r.disabled = 1  --0為有效帳號;1為失效帳號
+   AND r.name IN (
+'520665'
+,'515781'
+,'520209'
+,'520480'
+ )
+ ORDER BY r.name;
+ 
+--全部有效PLM帳號
+ SELECT u.fullname, --姓名
+       u.name, --工號
+       u.*
+  FROM wtuser u
+ WHERE u.disabled = 0
+
+--查詢ID是否有PLM帳號
+SELECT r.name                            AS employno
+     , r.fullname                        AS name
+     , decode(r.disabled, '0', 'Y', 'D') AS inservice
+FROM wtuser r
+WHERE r.name IN (
+ '520665'
+,'515781'
+,'520209'
+)
+ORDER BY r.name;
+
+
+--tab=查eip組織
+SELECT e.emp_no as EMPLOYNO, decode(e.end_date,null,'Y','N') as INSERVICE, e.emp_name as name
+     , e.emp_unit, d.dept_name, e.emp_title
+FROM yl_employee  e
+  LEFT JOIN yl_department d ON d.dept_no = e.emp_unit
+ WHERE e.emp_no IN ( '520373','520552','515635','730146','520666'
+ )
+ ORDER BY e.emp_no;
+
+--A.2同時有生效及失效帳號需去除(離調職停用帳號，回任再新增)
+SELECT employno
+  FROM ( SELECT substr(r.name, length(r.name) - 5, 6) AS employno
+              , r.fullname                            AS name
+              , decode(r.disabled, '0', 'Y', 'D')     AS inservice
+         FROM ( SELECT DISTINCT a.idb5
+                FROM auditrecord a
+               WHERE a.eventkey = '*/wt.session.SessionUserAuditEvent/login'
+              ) t
+        INNER JOIN wtuser r
+       ON t.idb5 = r.ida2a2
+        WHERE r.name NOT IN ( 'Administrator', 'RM001', 'RM002' )
+        GROUP BY substr(r.name, length(r.name) - 5, 6)
+               , r.fullname
+               , decode(r.disabled, '0', 'Y', 'D')
+       )
+ GROUP BY employno
+HAVING COUNT(*) > 1;
+
+--在途表單
+SELECT wtuser.name
+     , wtuser.last
+     , wfprocess.name          "流程名稱"
+     , wfassignedactivity.name "目前關卡"
+  FROM workitem
+     , wfassignedactivity
+     , wfprocess
+     , wtuser
+ WHERE workitem.ida3a4 = wfassignedactivity.ida2a2
+   AND wfassignedactivity.ida3parentprocessref = wfprocess.ida2a2
+   AND wtuser.ida2a2 = workitem.ida3a2ownership
+--and wfprocess.state = 'CLOSED_COMPLETED_EXECUTED'
+   AND workitem.status <> 'COMPLETED'
+   AND wtuser.name IN ( '920058'
+ );
+
+--Workflow組織表
+SELECT *   
+--DELETE
+  FROM ynmemp_org_table e
+ WHERE e.usr IN ( '920058'
+ );
+
+--車體所副理
+SELECT *
+  FROM ynmemp_org_table
+--UPDATE YNMEMP_ORG_TABLE SET SENIOR='515540'
+ WHERE senior IN ( '520373','520552','515635','730146','520666'
+ )
+   AND grp IN ( 'QCJ00', 'QCI00' )
+
+--帳號全盤
+SELECT r.name                            AS employno
+     , r.fullname                        AS name
+     , decode(r.disabled, '0', 'Y', 'D') AS inservice
+  FROM ( SELECT DISTINCT a.idb5
+         FROM auditrecord a
+        WHERE a.eventkey = '*/wt.session.SessionUserAuditEvent/login'
+       ) t
+ INNER JOIN wtuser r
+ON t.idb5 = r.ida2a2
+  ORDER BY r.disabled,r.name;
+
+--PLM有效帳號之姓名、工號、最後登陸日期和過去一年登入次數
+SELECT u.fullname AS 姓名,
+       u.name AS 工號,
+       MAX(a.eventtime) AS 最後一次登入日期,
+       COUNT(a.eventtime) AS 過去一年登入次數
+  FROM wtuser u
+  LEFT JOIN (SELECT username, eventtime
+               FROM AUDITRECORD
+              WHERE eventkey = '*/wt.session.SessionUserAuditEvent/login'
+                AND eventtime BETWEEN
+                    TO_DATE('2024-05-06', 'yyyy-mm-dd') - INTERVAL '1' YEAR --請在兩行的TO_DATE('2024-05-06'）都輸入一樣的日期。
+                AND TO_DATE('2024-05-06', 'yyyy-mm-dd')) a
+    ON u.fullname || ' (' || u.name || ': Yulon-Nissan)' = a.username
+ WHERE u.disabled = 0
+ GROUP BY u.fullname, u.name
+
+--PIS全部在職員工姓名、單位、職位
+SELECT e.emp_no as EMPLOYNO, decode(e.end_date,null,'Y','N') as INSERVICE, e.emp_name as name
+     , e.emp_unit, d.dept_name, e.emp_title
+FROM yl_employee  e
+  LEFT JOIN yl_department d ON d.dept_no = e.emp_unit
+ WHERE  decode(e.end_date, null, 'Y', 'N') = 'Y'
+ ORDER BY e.emp_no;
+ 
+ 
+--PLM有效帳號之姓名、工號、最後登陸日期、過去一年登入次數和在途流程數量
+ SELECT u.fullname AS 姓名,
+       u.name AS 工號
+    ,   TO_CHAR(MAX(a.eventtime),'YYYY/MM/DD') AS 最後一次登入日期
+    ,   COUNT(a.eventtime) AS 過去一年登入次數
+    , COALESCE(process_count,0) AS 在途流程數量
+FROM wtuser u
+  LEFT JOIN (SELECT username, eventtime
+               FROM AUDITRECORD
+              WHERE eventkey = '*/wt.session.SessionUserAuditEvent/login'
+                AND eventtime BETWEEN
+                    TO_DATE('2024-05-06', 'yyyy-mm-dd') - INTERVAL '1' YEAR --請在兩行的TO_DATE('2024-05-06'）都輸入一樣的日期。
+                AND TO_DATE('2024-05-06', 'yyyy-mm-dd')) a
+    ON u.fullname || ' (' || u.name || ': Yulon-Nissan)' = a.username
+LEFT JOIN
+(SELECT wtuser.name
+     , COUNT(*) AS process_count
+  FROM workitem
+     , wfassignedactivity
+     , wfprocess
+     , wtuser
+ WHERE workitem.ida3a4 = wfassignedactivity.ida2a2
+   AND wfassignedactivity.ida3parentprocessref = wfprocess.ida2a2
+   AND wtuser.ida2a2 = workitem.ida3a2ownership
+   AND workitem.status <> 'COMPLETED'
+   GROUP BY wtuser.name
+) b ON b.name = u.name
+WHERE 
+    u.disabled = 0
+GROUP BY 
+    u.fullname, u.name, process_count
+```
+
+==========================================================================================================================
+
+```sql
+PROCEDURE P_EC_EcChgLIST_PG( --查詢零件切換T_EC_CHG_INFO
+      varPageSize    IN VARCHAR2 --每頁數量
+     ,varPageNO      IN VARCHAR2 --當前頁
+     ,varEcnNumber   IN VARCHAR2
+     ,varStep        IN VARCHAR2
+     ,varKeyId       IN VARCHAR2
+     ,varUT_UNITID   IN VARCHAR2 --調查科別ID
+     ,varUserid      IN VARCHAR2 --登入者
+     ,varUndertake   IN VARCHAR2 --查詢承辦
+     ,varRole        IN VARCHAR2 -- -1(科長以下),0(科長),1(科長以上),9(admin),8(vendor)
+     ,ReturnValues   OUT SYS_REFCURSOR
+     ,OutRecordCount OUT VARCHAR2 --?記錄數
+  ) IS
+      -- Sql
+      varSql     VARCHAR2(4000);
+      varSubSql     VARCHAR2(4000);
+      varOrderby VARCHAR2(500);
+     -- var2       VARCHAR2(50);
+      -- Page
+      VarCountSql VARCHAR2(4000);
+      VarCount    INT;
+      VarMinRowNO INT;
+      VarMaxRowNO INT;
+  BEGIN
+      varSql := ' SELECT distinct C.UNDERTAKE AS undertakeID,c.TAKER_UNIT as utUnitID
+        , (select NAME from T_SYS_EMPLOYINFO where EMPLOYNO=C.UNDERTAKE) undertakeNA
+        , (SELECT UNITNA FROM T_SYS_EMPLOYINFO WHERE UNITID=C.TAKER_UNIT AND ROWNUM<=1) utUnitNA
+        , C.status , (select GLOSSARY1 from T_SYS_GLOSSARY where GLOSSARYTYPEID=C.status) as statusNA
+        , E.DESIGNER, E.DES_UNITID as desGrp
+        , (select NAME from T_SYS_EMPLOYINFO where EMPLOYNO=E.DESIGNER) designerNA
+        , (SELECT UNITNA FROM T_SYS_EMPLOYINFO WHERE UNITID=E.DES_UNITID AND ROWNUM<=1) desGrpNA
+        , TO_CHAR(E.RELEASED_DATE,''YYYY/MM/DD'') as releaseDate
+        , E.ECNNO, E.PDM_MODELS, E.EC_ID, E.PDM_ECFILEID, E.PDM_ATTACHID SQL2
+        , DECODE(E.VENDOR_SURVEY,''Y'',''０'',''N'',''Ｘ'',''X'',''Ｘ'') vendorSurvey
+        , C.CAR
+            FROM T_EC_INFO E INNER
+            JOIN T_EC_CHG_INFO C ON E.EC_ID=C.EC_ID
+          --  INNER JOIN T_ANP_MODEL M ON M.PD_MG_TAKER=C.UNDERTAKE AND M.MODEL=C.CAR
+            WHERE 1=1 ';
+
+    /*  --抓取各狀態值
+      var2 := SUBSTR(varRole,1,1); -- -1 -> -, 不然-1與1衝突
+      varSubSql :=  varSubSql || ' AND C.STATUS IN (SELECT GLOSSARYTYPEID FROM T_SYS_GLOSSARY WHERE GLOSSARYTYPEID LIKE ''A07%'' AND GLOSSARY3=''A06'' AND GLOSSARY2 LIKE ''%'||var2||'%'')';
+    */
+       CASE
+              WHEN varRole = '-1' THEN -- -1(科長以下)
+                select count(*) into varCount --判斷是否為LEADER
+                from T_SYS_USERGROUP
+                where groupid in (select groupid from T_SYS_GROUP where groupname = '切換Leader')
+                and userid = varuserid ;
+
+                IF varCount = 0 THEN --不是LEADER
+                   varSubSql := varSubSql || ' AND  c.STATUS IN  (''A07-1'',''A07-2'',''A07-5'') ';
+                   varSubSql := varSubSql || ' AND C.UNDERTAKE = ''' || varUserid || '''';
+                ELSE   --是LEADER
+                   varSubSql := varSubSql || ' AND ( ( c.STATUS IN  (''A07-1'',''A07-2'',''A07-5'') ';
+                   varSubSql := varSubSql || ' AND c.UNDERTAKE = ''' || varuserid || ''') or ( ';
+                   varSubSql := varSubSql || ' c.STATUS = ''A07-3'' ';
+                   varSubSql := varSubSql || ' AND c.Sign_Now = ''0'' ';
+                   varSubSql := varSubSql || ' AND c.Sign_Leader = ''' || varuserid || ''') )';
+                END IF;
+
+              WHEN varRole = '0' THEN --varRole = 0(科長), Sign_Now = 1(Sign_Level簽核層級第1個),
+                varSubSql := varSubSql || ' AND c.STATUS = ''A07-3'' ';
+                varSubSql := varSubSql || ' AND c.Sign_Now = ''1''  ';
+                varSubSql := varSubSql || ' AND C.TAKER_UNIT = ''' || varUT_UNITID || '''';
+
+              WHEN varRole = '1' THEN --varRole = 1(科長以上), Sign_Now = 2(Sign_Level簽核層級第二個),Sign_Now = 3(Signoff_Level簽核層級第三個)
+                varSubSql := varSubSql || ' AND c.STATUS = ''A07-3'' ';
+                varSubSql := varSubSql || ' AND (( c.Sign_Now in (''1'', ''2'') AND C.TAKER_UNIT in (select id from t_sys_leaderlayer where depusrid like ''%' || varuserid || '%''
+                and depusrid not like ''%' || varuserid || ''' )) or ( c.Sign_Now = ''3'' AND C.TAKER_UNIT in (select id from t_sys_leaderlayer where depusrid like ''%' || varuserid || ''')))';
+
+              WHEN varRole = '9' THEN --varRole = 9(admin)
+                 varSubSql := varSubSql || ' AND c.STATUS IN (''A07-1'',''A07-2'',''A07-3'',''A07-5'') ';
+              ELSE
+                 varSubSql := '';
+      END CASE;
+
+
+
+      CASE varstep
+         WHEN 'A06LOAD' THEN
+            IF varKeyId IS NOT NULL THEN
+               varSubSql := varSubSql || ' AND E.EC_ID = ''' || varKeyId || '''';
+            END IF;
+         WHEN 'A06LIST' THEN
+            IF varEcnNumber IS NOT NULL THEN
+               varSubSql := varSubSql || ' AND E.ECNNO = ''' || varEcnNumber || '''';
+            END IF;
+            varSubSql := varSubSql || ' AND E.STATUS <> ''A04-3'' ';
+
+            varOrderby := ' ORDER BY releaseDate desc';
+         WHEN 'A18LIST' THEN
+              --varSql:=replace(varSql, 'SQL2', ', c.CAR');
+              varSql:=replace(varSql, 'SQL2', ', F_EC_GetMutiID(''C'',c.ec_id,c.car) chg_id');
+              varSubSql := ' AND C.UNDERTAKE = ''' || varUndertake || '''';
+              varSubSql := varSubSql || ' AND c.STATUS IN (''A07-1'',''A07-2'',''A07-3'',''A07-5'') ';
+         WHEN 'A18LOAD' THEN
+              varSql:=replace(varSql, 'SQL2', ', F_EC_GetMutiID(''C'',c.ec_id,c.car) chg_id');
+              varSubSql := ' AND C.UNDERTAKE = ''' || varUndertake || '''';
+              varSubSql := varSubSql || ' AND c.STATUS IN (''A07-1'',''A07-2'',''A07-3'',''A07-5'') ';
+              varSubSql := varSubSql || ' AND c.chg_id IN (' || varKeyId ||') ';
+         ELSE
+            OPEN ReturnValues FOR
+               SELECT 'NA' id, 'NA' NAME
+                 FROM dual;
+
+      END CASE;
+
+      --insert into t_ec_sql_log values(sysdate, varSql, 'P_EC_EcChgLIST_PG');
+      
+      IF varUndertake IS NOT NULL THEN
+        varSql := varSql;
+      END IF;
+
+      varSql := varSql || varSubSql || varOrderby;
+      -- 取記錄數
+      VarCountSql := 'select count(*) from (' || varSql || ')';
+      EXECUTE IMMEDIATE VarCountSql INTO VarCount;
+      OutRecordCount := TO_CHAR(VarCount);
+
+      --執行分頁查詢
+      -- XX當每頁筆數大於 0 時, 才做分頁, 不大於0為匯出(Export)用
+      VarMaxRowNO := TO_NUMBER(varPageSize) * TO_NUMBER(varPageNO);
+      VarMinRowNO := VarMaxRowNO - TO_NUMBER(varPageSize) + 1;
+      IF varPageSize > '0' THEN
+         VarSql := ' SELECT to_number('||varPageSize||') * (to_number('||varPageNO||')-1)+rownum as no, B.* FROM (
+                   SELECT A.*, rownum rn FROM  (' || VarSql || ') A
+                      WHERE rownum <= ' || TO_CHAR(VarMaxRowNO) || ') B
+               WHERE rn >=  ' || TO_CHAR(VarMinRowNO) || ' order by no ';
+      END IF;
+
+      OPEN ReturnValues FOR varSql;
+
+  EXCEPTION
+     WHEN OTHERS THEN
+        OPEN ReturnValues FOR SELECT 'ERR' id, 'ERR' NAME FROM dual;
+  END;
+```
+
+
+
+============================================================================================================================================
+local parts investigation/survey
+
+設計科 local 廠商
+peo五大模組零件
+
+三一工廠條件不一樣
+
+承辦主管比較細
+
+設通如果給廠商比較沒有那麽細
+
+不再用廠商來做區別
+
+用設計五科
+
+search 
+1oem to many 科
+
+just use the designer department
+
+filter by company
+
+need a person when no other can handle so go to 資管科
+
+當我們同時使用兩個版本的時候授權怎麽計算 會不會被double counting明明是同一群人在使用
+subscribe了那麽多年了，價錢不會跟新的subscriber一樣吧
+最低采購數量是多少
+
+support ptc
+how to see heavy user light
+how to check if the account affects any process
+
+================================================================================
+this is al:
+this is al header:
+ECN No,Series No,Block No,Variant,Solution,Applied Model,COM,OPT Type,OPT Code,State,Version,Spec Description,Operation No,Factory Code
+this is one row of al:
+XH3120-29SR1,XH3,120-29,SR1,001,"AA,AB,BA,BB,CA",v, , ,已發行,E,,PS,
+
+this is pl:
+this is pl header:
+ECN No,Series No,Function Code,Variant,Solution,Part No.,Part Name,Qty,Level,Source,"Region
+(國別)","Currency
+(PCC)",Group Code,Set Code,Alternate Code,Formal P/N.,Part Item Change,Multi Dwg,DWG No,Dwg Chg,Dwg Size,DWG Type ,DWG Source,Vital Code,,Color Code,"Color Code 
+(2-tone)",Supplier Code ,Material,Spec Description,Estimate Weight ,Exact Weight ,Tooling_cost,Part_Cost,Part Remark,Block Diff. Name,Spec Description,Operation No.,"Factory Code
+(工序)",Section,State,Version
+this is one row of pl:
+02F100-00010,02F,100-00,010,000,10092 5RF0A,ADJ SPEC-ENG,0,1,X,,,,,N,-,,-,L10092 5RF0A,11,OR,,Nissan,N,,,,,,,,,,,XH2-K2?PRC,ENG ASSY(CAR TO UNIT),,C1,K,引擎底盤科(李彥壯),已發行,E,"AA,AB,AC",, ,,,,,,,,,,#REF!,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+
+=======================================================================================================================
+p_ec_vendorparts
+p_ec_vendorpartssave
+p_ec_newsurveyupdate
+p_ec_surveylist
+
+=======================================================================================================================
+stuff I changed in the distakersurvey procedure
+
+I added designer to the declaration and to the start of the loop that retrieves this value from the ec_info_list
+
+=============================================================
+
+\PIS_DEV\src\main\webapp\WEB-INF\dataAccessContext.xml
+reportserver 報表
+515860 郭佳龍
+515505 peo
+YNpae0911
+
+請問有理解右邊欄位的訊息嗎？
+請問在5s方面有什麽困難嗎？
+
+
+引擎底盤科 YNQGD00
+電裝空調科 YNQHB00
+電子通訊科 YNQHA00
+内裝設計科 YNQCI00
+外裝設計科 YNQCJ00
+
+=============================================================
+
+Dear 所有人,
+承揚預計於6/3(一) 13:30-15:00舉行新人考核報告會議。
+請科長和各位同仁抽空回饋下週時段是否可行,謝謝!
+
+=============================================================
+
+javac -encoding utf-8 startSurvey.java
+
+
+schedule Surve bat
+
+net use Q: /del
+net use Q: \\10.10.136.74\EC_FILE "Appwd1511" /user:"apuser"
+D:\ptc\Windchill_11.0\Windchill\bin\windchill.exe -w "D:\ptc\Windchill_11.0\Windchill" --java="D:\ptc\Windchill_11.0\Java\jre\bin\java.exe" ext.ynm.ecm.startSurvey
+
+
+Dear Stanley，
+ 
+請您協助確認以下事項：
+ 
+1. 針對合約中的自動續約條款，是否確定可以自動續約？
+2. 續約價格是否有變動？如果有，請提供最新的價格資訊。
+3. 上次Jeff提到會提供新舊授權對照表。如果方便，請您一併發送給我們。
+ 
+針對以上事項，懇請您於6月15日前回覆。如有任何困難，請隨時告知。
+ 
+非常感謝您的協助，期待您的回覆。
+ 
+承揚

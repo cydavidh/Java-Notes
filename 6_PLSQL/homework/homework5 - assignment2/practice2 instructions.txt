@@ -1,0 +1,11 @@
+承揚 好，
+        作業2需求如下：
+1.	使用上次您提供的”homework3_cursor2.sql”進行修改
+2.	建立return-執行結果 變數
+3.	移除input : input_release_date_start 
+4.	發行時間起始統一為 input : input_release_date_end 減100天
+5.	Open cursor 時請在 DATA_NOT_FOUND exception時return-執行結果 變數 存入字串 “查無資料”，並output return-執行結果
+
+p.s. 因近期另有其他事情待處理，practice 0~1於下周進行回饋。
+
+如有問題再請及時通知，謝謝！

@@ -1,0 +1,18 @@
+PL/SQL practice0 - DB SCHEMA熟悉-ESS廠商調查表查詢功能匯出
+
+
+承揚 好，
+
+        為檢驗您的PL/SQL學習成效，請試著使用下列資訊完成附件SQL查詢，提示如下：
+        DB：ESS測試機
+        TABLE：1. T_EC_INFO
+                        2. T_EC_SUM
+                        3. T_SYS_GLOSSARY       需使用公用參數 A05- 、A18- 開頭的參數
+        條件：1. 發行時間：2022/01/01 – 2022/12/31 
+          2. 車系： 21B
+        
+        Deadline：4/26下班前
+
+        TABLE SCHEMA 可以在TABLE內容確認，若有問題可以即時反應，謝謝！
+
+Best Regards,

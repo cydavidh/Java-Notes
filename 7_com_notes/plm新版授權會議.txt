@@ -1,0 +1,151 @@
+會議討論項目：
+	探討新舊授權差異，包括功能、價格以及對使用者的影響。
+	討論增購授權時所需的最低帳號數量。
+	裕日現行合約於2025年9月到期時，帳號數量若無異動，討論是否可依合約進行續約。
+	新版Base/Advance與舊版Heavy/Light User的計價模式轉換方案。
+	探討Windchill PDMLink哪一版本可與UG NX / Space vertex等CAD圖檔簽核整合檢視運用，並瞭解成功運用實例及圖檔存放的細部說明。
+
+windows11版本的browser有狀況
+前臺後臺執行錯誤直接顯示在前臺 friend 裡面
+附件分頁出現網頁的錯誤cache造成的
+
+爲什麽要升級：
+corporate version 13
+NX 2306
+workgroup manager
+對照表
+body cad非ptc圖面管理 入庫
+圖檔管控方式：附件管理？版本新舊沒有差別。
+版本正確性
+3d結構放進pdm
+研發端bom有兩個 
+g2b有跟pdm整合
+team center = Nx pdm
+升級1.5年
+
+市面上的企業使用的版本：DT digital t? 碳排放 carbon footprint? ESG認證目標
+ebom mbom servicebom
+reuse data used to be copy and paste, now we transfer
+so DT doesn't apply
+can estimate carbon footprint from bom part, weight etc
+
+windchill upgrade manager
+11.0 - 12.1 - 13
+
+service max? 售後管理服務。
+Q在另一個系統
+版次版本管控
+routing to mbom to service bom
+routing used to be same with ebom
+ALM codebeamer: 法規管控要求 智能座艙 整個串聯
+
+attach方式來管理圖檔
+圖檔管理用來審核
+
+g2b and team center link
+
+xtrail finish 第一版的bom在g2b然後拉進來plm
+
+透過界面儅提供給下游
+
+plm發行
+
+先討論模組是否有不同
+康楊另外一個
+
+nx2306 13.0.0.1之後有支持
+
+找cad工程師來進行講解
+
+windchill 13 對照 oracle 23C?
+
+13 has already reach middle of life.
+
+企業環境買了80license 兩個主機，一套productionn 一套qa
+建立一套最新的版本，使用者還是
+兩邊資料交換困難 可實現度
+
+boi
+
+part management link to outside manufacture
+
+gs fred 
+license is the last next year how to make sure the next user basic advanced, 
+we need to make sure about this before august, and dec end
+estimate number of accounts we want to purchase ,
+a graph coresponding heavy light and advanced base
+
+download cad非ptc圖面管理
+
+partslink
+
+bom 表設定一個替代碼
+另外一個料號會切進來
+
+ebom管控要多細 顔色件時使用顔色碼
+part color 
+color mark
+
+如果ECN有影響零件
+
+分類屬性查找
+
+屬性變成模糊查找
+
+細項到零件資料
+
+pdmlink and partslink need money
+advanced + partslink
+
+base + 5 partslink
+全文檢索
+
+附件查找找到附件内容
+
+一個車型就是一個project
+作業沒有標準化不能系統化
+
+problem report will close upwards
+common report 對到
+report 2 ecr to 2
+
+大燈裡面兩個ecr兩個ecn
+
+problem report close 需不需要卡ecn close or not?
+
+目前只有ecn回報給ecn
+
+esg turn digital advanced version of iot
+using iot to automatically let winchill read automaticallythe other side won't open  connection for this 
+using excel 
+using information to turn into excel and then excel they don't have a very logical theme
+sometimes we use know how we cant reach their data
+we use frontend ui to get data from g2bwe can let other company 
+we never let the other side touch the database we ahave different custom programs for our application
+we open a web for downstream .
+
+managing esg in pdm is superior to erp.
+
+we rent nx from nissan motors
+
+比較多有料無圖。大部分的圖國外廠商不會給圖。local廠商圖
+Nx pdm上面
+
+零件rt sourcing 
+採購發估 零件細節
+
+新版授權這個合約可不可以續三年
+採購要重新報議價
+明年執行時間
+可能不讓你續
+在今年要規劃升級
+
+subscription 
+
+文件管理專案管理 base
+advanced 
+Windchill classification 分類管理 parts-link
+
+RU DU 連時間都估不出來
+
+當時的執行顧問沒有。
