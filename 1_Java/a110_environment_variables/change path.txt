@@ -1,0 +1,5 @@
+C:\Program Files\Java\jdk1.8.0_202
+C:\Program Files\Amazon Corretto\jdk17.0.2_8
+
+got to environment variables, System variables, JAVA_HOME, edit the JAVA_HOME variable value.
+don't need to mess with the path.

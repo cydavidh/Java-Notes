@@ -1,6 +1,7 @@
 
 
 ```java
+int[] array = new int[] {}; empty array
 int[] array = new int[] {1, 2, 3, 4, 5};
 // or
 int[] arr = {3, 1, 2, 5, 4};
