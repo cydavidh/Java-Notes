@@ -8,7 +8,7 @@ import java.util.List;
 public class ArrayList1 {
 
     public static void main(String[] args) {
-        List<String> oldList = Arrays.asList("Apple", "Banana", "Cherry");
+        List<String> oldList = List.of("Apple", "Banana", "Cherry");
         ArrayList<String> newList = new ArrayList<String>(oldList);
         ArrayList<Integer> list = new ArrayList<Integer>();
         ArrayList<Double> list1 = new ArrayList<>();
