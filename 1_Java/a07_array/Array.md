@@ -1,7 +1,7 @@
 
 
 ```java
-int[] array = new int[] {}; empty array
+int[] array = new int[] {}; //empty array
 int[] array = new int[] {1, 2, 3, 4, 5};
 // or
 int[] arr = {3, 1, 2, 5, 4};
@@ -10,6 +10,7 @@ int[] myArray = new int[5]; // Declare and instantiate an array
 myArray[0] = 1; // Set first element
 myArray[1] = 2; // Set second element
 // ... and so on
+        
 System.out.println(myArray[0]); // Prints "1"
 System.out.println(myArray.length); // Prints "5"
 ```

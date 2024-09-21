@@ -3,7 +3,7 @@ java in a nutshell p.133
 #java.lang.Object
 - when override Object.equals(), must also override Object.hashCode().
 - hashCode() method returns an integer for use by hash table data structures.
-- two objects need to have same hashcode if they are equal according to equals() mthod.
+- two objects need to have same hashcode if they are equal according to equals() method.
 
 
 For a class to be used as a HashMap's key, we need to define for it:

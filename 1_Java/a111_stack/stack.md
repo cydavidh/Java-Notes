@@ -17,6 +17,7 @@ so the new stack is Deque.
 
 ```java
 Deque<Integer> stack = new ArrayDeque<>();
+Deque<Integer> stack = new LinkedList<>();
 //below are all methods of Deque.
 -----------------------------------
 stack name  |  queue method name

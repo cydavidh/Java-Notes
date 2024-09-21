@@ -18,6 +18,7 @@ public class Array1 {
 
         int[][] myNumbers = { { 1, 2, 3, 4 }, { 4, 5, 6 } };
         int x = myNumbers[1][2]; //6
+        x.
     }
 }
 
